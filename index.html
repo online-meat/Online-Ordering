@@ -44,9 +44,9 @@
             <div class="row">
                 <div class="col-md-3">
                     <!-- Logo -->
-                    <div class="module module-logo dark">
-                        <a href="index.html">
-                            <img src="assets/img/logo-light.svg" alt="" width="88">
+                    <div class="module module-logo light">
+                        <a href="#">
+                            <img src="assets/img/logo-dark.svg" alt="" width="88">
                         </a>
                     </div>
                 </div>
@@ -168,40 +168,37 @@
     <div id="content">
 
         <!-- Section - Main -->
-        <section class="section section-main section-main-1 bg-light">
+        <section class="section section-main section-main-2 bg-dark dark">
 
-            <div class="container dark">
-                <div class="slide-container">
-                    <div id="section-main-1-carousel-image" class="image inner-controls">
-                        <div class="slide"><div class="bg-image"><img src="assets/img/photos/slider-pasta.jpg" alt=""></div></div>
-                        <div class="slide"><div class="bg-image"><img src="assets/img/photos/slider-burger.jpg" alt=""></div></div>
-                        <div class="slide"><div class="bg-image"><img src="assets/img/photos/slider-dessert.jpg" alt=""></div></div>
+            <div id="section-main-2-slider" class="section-slider inner-controls">
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/photos/slider-burger_dark.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h1 class="display-2 mb-2">Get 10% off coupon</h1>
+                        <h4 class="text-muted mb-5">and use it with your next order!</h4>
+                        <a href="page-offers.html" class="btn btn-outline-primary btn-lg"><span>Get it now!</span></a>
                     </div>
-                    <div class="content dark">
-                        <div id="section-main-1-carousel-content">
-                            <div class="content-inner">
-                                <h4 class="text-muted">New product!</h4>
-                                <h1>Boscaiola Pasta</h1>
-                                <div class="btn-group">
-                                    <a href="#productModal" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Add to cart</span></a>
-                                    <span class="price price-lg">from $9.98</span>
-                                </div>
-                            </div>
-                            <div class="content-inner">
-                                <h1>Get 10% off coupon</h1>
-                                <h5 class="text-muted mb-5">and use it with your next order!</h5>
-                                <a href="page-offers.html" class="btn btn-outline-primary btn-lg"><span>Get it now!</span></a>
-                            </div>
-                            <div class="content-inner">
-                                <h1>Delicious Desserts</h1>
-                                <h5 class="text-muted mb-5">Order it online even now!</h5>
-                                <a href="menu-list-collapse.html" class="btn btn-outline-primary btn-lg"><span>Order now!</span></a>
-                            </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/photos/slider-dessert_dark.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h1 class="display-2 mb-2">Delicious Desserts</h1>
+                        <h4 class="text-muted mb-5">Order it online even now!</h4>
+                        <a href="menu-list-collapse.html" class="btn btn-outline-primary btn-lg"><span>Order now!</span></a>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/photos/slider-pasta_dark.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h4 class="text-muted">New product!</h4>
+                        <h1 class="display-2">Boscaiola Pasta</h1>
+                        <div class="btn-group">
+                            <a href="#productModal" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Add to cart</span></a>
+                            <span class="price price-lg">from $9.98</span>
                         </div>
-                        <nav class="content-nav">
-                            <a class="prev" href="#"><i class="ti-arrow-left"></i></a>
-                            <a class="next" href="#"><i class="ti-arrow-right"></i></a>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -211,12 +208,12 @@
         <!-- Section - About -->
         <section class="section section-bg-edge">
 
-            <div class="image right col-md-6 push-md-6">
-                <div class="bg-image"><img src="assets/img/photos/bg-food.jpg" alt=""></div>
+            <div class="image left col-md-6">
+                <div class="bg-image"><img src="assets/img/photos/bg-chef.jpg" alt=""></div>
             </div>
 
             <div class="container">
-                <div class="col-lg-5 col-md-9">
+                <div class="col-lg-5 col-lg-push-7 col-md-9 push-md-6">
                     <div class="rate mb-5 rate-lg"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
                     <h1>The best food in London!</h1>
                     <p class="lead text-muted mb-5">Donec a eros metus. Vivamus volutpat leo dictum risus ullamcorper condimentum. Cras sollicitudin varius condimentum. Praesent a dolor sem....</p>
@@ -250,7 +247,7 @@
         </section>
 
         <!-- Section - Steps -->
-        <section class="section section-extended right dark">
+        <section class="section section-extended left dark">
 
             <div class="container bg-dark">
                 <div class="row">
@@ -289,8 +286,57 @@
 
         </section>
 
+        <!-- Section - Offers -->
+        <section class="section bg-light">
+
+            <div class="container">
+                <h1 class="text-center mb-6">Special offers</h1>
+                <div class="carousel" data-slick='{"dots": true}'>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/special-burger.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">Free Burger</h2>
+                            <h5 class="text-muted mb-5">Get free burger from orders higher that $40!</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>Only on Tuesdays</li>
+                                <li class="false">Order higher that $40</li>
+                                <li>Unless one burger ordered</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/special-pizza.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">Free Small Pizza</h2>
+                            <h5 class="text-muted mb-5">Get free burger from orders higher that $40!</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>Only on Weekends</li>
+                                <li class="false">Order higher that $40</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/special-dish.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">Chip Friday</h2>
+                            <h5 class="text-muted mb-5">10% Off for all dishes!</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>Only on Friday</li>
+                                <li>All products</li>
+                                <li>Online order</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
         <!-- Section - Menu -->
-        <section class="section pb-0 protrude">
+        <section class="section pb-0">
 
             <div class="container">
                 <h1 class="mb-6">Our menu</h1>
@@ -364,126 +410,25 @@
 
         </section>
 
-        <!-- Section - Offers -->
-        <section class="section bg-light">
-
-            <div class="container">
-                <h1 class="text-center mb-6">Special offers</h1>
-                <div class="carousel" data-slick='{"dots": true}'>
-                    <!-- Special Offer -->
-                    <div class="special-offer">
-                        <img src="assets/img/photos/special-burger.jpg" alt="" class="special-offer-image">
-                        <div class="special-offer-content">
-                            <h2 class="mb-2">Free Burger</h2>
-                            <h5 class="text-muted mb-5">Get free burger from orders higher that $40!</h5>
-                            <ul class="list-check text-lg mb-0">
-                                <li>Only on Tuesdays</li>
-                                <li class="false">Order higher that $40</li>
-                                <li>Unless one burger ordered</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Special Offer -->
-                    <div class="special-offer">
-                        <img src="assets/img/photos/special-pizza.jpg" alt="" class="special-offer-image">
-                        <div class="special-offer-content">
-                            <h2 class="mb-2">Free Small Pizza</h2>
-                            <h5 class="text-muted mb-5">Get free burger from orders higher that $40!</h5>
-                            <ul class="list-check text-lg mb-0">
-                                <li>Only on Weekends</li>
-                                <li class="false">Order higher that $40</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Special Offer -->
-                    <div class="special-offer">
-                        <img src="assets/img/photos/special-dish.jpg" alt="" class="special-offer-image">
-                        <div class="special-offer-content">
-                            <h2 class="mb-2">Chip Friday</h2>
-                            <h5 class="text-muted mb-5">10% Off for all dishes!</h5>
-                            <ul class="list-check text-lg mb-0">
-                                <li>Only on Friday</li>
-                                <li>All products</li>
-                                <li>Online order</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Section -->
-        <section class="section section-lg dark bg-dark">
-
-            <!-- BG Image -->
-            <div class="bg-image bg-parallax"><img src="assets/img/photos/bg-croissant.jpg" alt=""></div>
-
-            <div class="container text-center">
-                <div class="col-lg-8 push-lg-2">
-                    <h2 class="mb-3">Check our promo video!</h2>
-                    <h5 class="text-muted">Book a table even right now or make an online order!</h5>
-                    <button class="btn-play" data-toggle="video-modal" data-target="#modalVideo" data-video="https://www.youtube.com/embed/uVju5--RqtY"></button>
-                </div>
-            </div>
-
-        </section>
-
-
         <!-- Footer -->
         <footer id="footer" class="bg-dark dark">
 
             <div class="container">
-                <!-- Footer 1st Row -->
-                <div class="footer-first-row row">
-                    <div class="col-lg-3 text-center">
+                <!-- Footer 2nd Row -->
+                <div class="footer-second-row row align-items-center">
+                    <div class="col-lg-4 text-center text-md-left">
+                        <span class="text-sm text-muted">Copyright Soup 2017©.<br>Made with love by Suelo.</span>
+                    </div>
+                    <div class="col-lg-4 text-center">
                         <a href="index.html"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h5 class="text-muted">Latest news</h5>
-                        <ul class="list-posts">
-                            <li>
-                                <a href="blog-post.html" class="title">How to create effective webdeisign?</a>
-                                <span class="date">February 14, 2015</span>
-                            </li>
-                            <li>
-                                <a href="blog-post.html" class="title">Awesome weekend in Polish mountains!</a>
-                                <span class="date">February 14, 2015</span>
-                            </li>
-                            <li>
-                                <a href="blog-post.html" class="title">How to create effective webdeisign?</a>
-                                <span class="date">February 14, 2015</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-5 col-md-6">
-                        <h5 class="text-muted">Subscribe Us!</h5>
-                        <!-- MailChimp Form -->
-                        <form action="//suelo.us12.list-manage.com/subscribe/post-json?u=ed47dbfe167d906f2bc46a01b&amp;id=24ac8a22ad" id="sign-up-form" class="sign-up-form validate-form mb-3" method="POST">
-                            <div class="input-group">
-                                <input name="EMAIL" id="mce-EMAIL" type="email" class="form-control" placeholder="Tap your e-mail..." required>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary btn-submit" type="submit">
-                                        <span class="description">Subscribe</span>
-                                        <span class="success">
-                                            <svg x="0px" y="0px" viewBox="0 0 32 32"><path stroke-dasharray="19.79 19.79" stroke-dashoffset="19.79" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/></svg>
-                                        </span>
-                                        <span class="error">Try again...</span>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-                        <h5 class="text-muted mb-3">Social Media</h5>
+                    <div class="col-lg-4 col-md-6 text-center text-md-right">
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
                     </div>
-                </div>
-                <!-- Footer 2nd Row -->
-                <div class="footer-second-row">
-                    <span class="text-muted">Copyright Soup 2017©. Made with love by Suelo.</span>
                 </div>
             </div>
 
@@ -714,16 +659,6 @@
                 </div>
             </div>
             <button type="button" class="modal-btn btn btn-secondary btn-block btn-lg" data-dismiss="modal"><span>Add to Cart</span></button>
-        </div>
-    </div>
-</div>
-
-<!-- Video Modal / Demo -->
-<div class="modal modal-video fade" id="modalVideo" role="dialog">
-    <button class="close" data-dismiss="modal"><i class="ti-close"></i></button>
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <iframe height="500"></iframe>
         </div>
     </div>
 </div>
