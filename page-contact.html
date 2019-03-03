@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Title -->
-<title>The Crown</title>
+<title>eMeat - Order Meat Online</title>
 
 <!-- Favicons -->
 <link rel="shortcut icon" href="assets/img/favicon.png">
@@ -25,6 +25,7 @@
 
 <!-- CSS Icons -->
 <link rel="stylesheet" href="assets/css/themify-icons.css" />
+<link rel="stylesheet" href="assets/css/prettify.css" />
 <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
 
 <!-- CSS Theme -->
@@ -172,7 +173,29 @@
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
                     </div>
                     <div class="col-lg-5 push-lg-2 col-md-6">
-                        <div id="google-map" class="h-500 shadow"></div>
+                        <div id="google-map" class="h-500 shadow">
+                            <form>
+                                <div style="text-align:center;color: black">
+                                    <h4>Please fill out this form</h4>
+                                </div>
+                                <div class="input-group">
+                                    <input name="name" id="message-name" type="text" class="form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="input-group">
+                                    <input name="email" id="message-email" type="email" class="form-control" placeholder="E-mail Address" required>
+                                </div>
+                                <div class="input-group">
+                                    <input name="phone" id="message-phone" type="number" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <div class="input-group">
+                                    <textarea name="comment" rows="12" class="form-control" placeholder="Drop your message here!" required></textarea>
+                                </div><br/>
+                                <div style="float:right;">
+                                    <input type="reset" value="Reset" class="btn btn-info"> &nbsp;&nbsp;
+                                    <input type="submit" value="Submit" class="btn  btn-success">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -180,10 +203,10 @@
         </section>
 
         <!-- Footer -->
-       <!--  <footer id="footer" class="bg-dark dark">
+         <footer id="footer" class="bg-dark dark">
 
             <div class="container">
-                <!-- Footer 1st Row
+                <!-- Footer 1st Row -->
                 <div class="footer-first-row row">
                     <div class="col-lg-3 text-center">
                         <a href="index.html"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
@@ -192,22 +215,14 @@
                         <h5 class="text-muted">Latest news</h5>
                         <ul class="list-posts">
                             <li>
-                                <a href="blog-post.html" class="title">How to create effective webdeisign?</a>
-                                <span class="date">February 14, 2015</span>
-                            </li>
-                            <li>
-                                 <a href="blog-post.html" class="title">Awesome weekend in Polish mountains!</a>
-                                <span class="date">February 14, 2015</span>
-                            </li>
-                            <li>
-                                <a href="blog-post.html" class="title">How to create effective webdeisign?</a>
-                                <span class="date">February 14, 2015</span>
+                                <a href="blog-post.html" class="title">Lauching of online meat platform</a>
+                                <span class="date">March 14, 2019</span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <h5 class="text-muted">Subscribe Us!</h5>
-                        <!-- MailChimp Form
+                        <!-- MailChimp Form -->
                         <form action="//suelo.us12.list-manage.com/subscribe/post-json?u=ed47dbfe167d906f2bc46a01b&amp;id=24ac8a22ad" id="sign-up-form" class="sign-up-form validate-form mb-3" method="POST">
                             <div class="input-group">
                                 <input name="EMAIL" id="mce-EMAIL" type="email" class="form-control" placeholder="Tap your e-mail..." required>
@@ -229,7 +244,7 @@
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
                     </div>
-                </div> -->
+                </div>
                 <!-- Footer 2nd Row -->
                 <div class="footer-second-row">
                     <span class="text-muted">Copyright © 2019 - eMeat.</span>
@@ -483,6 +498,7 @@
 
 <!-- JS Core -->
 <script src="assets/js/core.js"></script>
+<script src="assets/js/prettify.js"></script>
 
 <!-- JS Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
