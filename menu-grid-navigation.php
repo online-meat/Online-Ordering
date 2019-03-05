@@ -83,7 +83,7 @@
                                         <li class="has-dropdown">
                                             <a href="#">Products</a>
                                             <ul>
-                                                <li><a href="menu-grid-navigation.html">All Products</a></li>
+                                                <li><a href="menu-grid-navigation.php">All Products</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -93,7 +93,7 @@
                         </ul>
                     </nav>
                     <div class="module left">
-                        <a href="menu-list-navigation.html" class="btn btn-outline-secondary"><span>Order Now</span></a>
+                        <a href="menu-grid-navigation.php" class="btn btn-outline-secondary"><span>Order Now</span></a>
                     </div>
                 </div>
                 <div class="col-md-2">
