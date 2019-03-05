@@ -1,38 +1,20 @@
+<?php
 
-<!DOCTYPE html>
-<html lang="en">
+?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
-
-<!-- Meta -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<!-- Title -->
 <title>eMeat Australia - Order Meat Online</title>
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="assets/img/favicon.png">
-<link rel="apple-touch-icon" href="assets/img/favicon_60x60.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon_76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon_120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon_152x152.png">
-
-<!-- CSS Plugins -->
-<link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="assets/plugins/slick-carousel/slick/slick.css" />
-<link rel="stylesheet" href="assets/plugins/animate.css/animate.min.css" />
-<link rel="stylesheet" href="assets/plugins/animsition/dist/css/animsition.min.css" />
-
-<!-- CSS Icons -->
-<link rel="stylesheet" href="assets/css/themify-icons.css" />
-<link rel="stylesheet" href="assets/css/prettify.css" />
-<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
-
-<!-- CSS Theme -->
-<link id="theme" rel="stylesheet" href="assets/css/themes/theme-beige.min.css" />
-
-
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="description" content="eMeat Australia - Order Meat Online" />
+<meta name="keywords" content="Meat, Chicken, Goat Meat, Marryland Chicken, Lamb, Calf" />
+<meta name="developer" content="IMSOFNET (tech@emeat.com.au)">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
+<<<<<<< HEAD
 
 <body>
 
@@ -716,4 +698,10 @@
 
 </body>
 
+=======
+<frameset rows="*" cols="*" frameborder="NO" border="0"
+	framespacing="0" bordercolor="#bbccdd">
+	<frame src="home.php" name="topFrame" />
+</frameset>
+>>>>>>> origin/master
 </html>
