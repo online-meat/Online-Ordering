@@ -40,7 +40,7 @@
                         <h1 class="display-2 mb-2">Rump Steak</h1>
                         <div class="btn-group">
                             <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Call for it</span></a>
-                            <span class="price price-lg">from $9.98/kg</span>
+                            <span class="price price-lg">from $17.99/kg</span>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         <h1 class="display-2 mb-2">Pay on Delivery!</h1>
                         <div class="btn-group">
                             <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Order this</span></a>
-                            <span class="price price-lg">from $9.98/kg</span>
+                            <span class="price price-lg">from $15.00/kg</span>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         <h1 class="display-2 mb-2">Halal Products</h1>
                         <div class="btn-group">
                             <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Get it</span></a>
-                            <span class="price price-lg">from $9.98/kg</span>
+                            <span class="price price-lg">from $10.99/kg</span>
                         </div>
                     </div>
                 </div>
@@ -170,8 +170,7 @@
                             <h5 class="text-muted mb-5">Get discount of 10% from orders higher that $40!</h5>
                             <ul class="list-check text-lg mb-0">
                                 <li>Order any day of the week and get it the second day</li>
-                                <!--<li class="false">Order higher that $40</li>-->
-                                <li>Delivered frozen and pay on delivery</li>
+                                <li class="false">5% off for order higher that $100</li>
                             </ul>
                         </div>
                     </div>
@@ -180,7 +179,7 @@
                         <img src="assets/img/photos/butcher2.jpg" alt="" class="special-offer-image">
                         <div class="special-offer-content">
                             <h2 class="mb-2">Beef Ribs, Roast Beef</h2>
-                            <h5 class="text-muted mb-5">Get discount of 10% from orders higher that $40!</h5>
+                            <h5 class="text-muted mb-5">Get discount of 5% from orders higher that $100!</h5>
                             <ul class="list-check text-lg mb-0">
                                 <li>Order any day of the week and get it the second day</li>
                                 <li>Delivered frozen</li>
@@ -192,7 +191,7 @@
                         <img src="assets/img/photos/product/product17.jpg" alt="" class="special-offer-image">
                         <div class="special-offer-content">
                             <h2 class="mb-2">Ox-Tail, Osoboco</h2>
-                            <h5 class="text-muted mb-5">10% Off for all orders above $40!</h5>
+                            <h5 class="text-muted mb-5">5% Off for all orders above $100!</h5>
                             <ul class="list-check text-lg mb-0">
                                 <li>Everyday of the week</li>
                                 <li>Online order</li>
@@ -206,7 +205,7 @@
                             <h2 class="mb-2">Rib Eye Steak</h2>
                             <h5 class="text-muted mb-5">Get delivered to your doorstep</h5>
                             <ul class="list-check text-lg mb-0">
-                                <li>10% Off applies on order higher that $40</li>
+                                <li>5% Off applies on order higher that $100</li>
                                 <li>Click to view more products</li>
                             </ul>
                         </div>
@@ -292,22 +291,7 @@
             </div>
 
         </section>
-        <section><div></div></section>
-        <!-- Section -->
-        <section class="section section-lg dark bg-dark">
 
-            <!-- BG Image -->
-            <div class="bg-image bg-parallax"><img src="assets/img/photos/meat-banner.jpg" alt=""></div>
-
-            <div class="container text-center">
-                <div class="col-lg-8 push-lg-2">
-                    <h2 class="display-2 mb-3">Would you like to order now?</h2>
-                    <h5 class="display-5">Make an online order now and enjoy great services!</h5>
-                    <a href="menu-grid-navigation.php" class="btn btn-primary"><span>Order Online</span></a>
-                </div>
-            </div>
-
-        </section>
 
 
 <?php
