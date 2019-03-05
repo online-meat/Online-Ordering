@@ -90,7 +90,7 @@
                         <blockquote class="blockquote light animated" data-animation="fadeInLeft">
                             <div class="blockquote-content">
                                 <div class="rate rate-sm mb-3"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
-                                <p>It was amazing ordering my stake online!</p>
+                                <p>It was amazing ordering my steak online!</p>
                             </div>
                             <footer>
                                 <span class="name">John Lee<span class="text-muted">, Liverpool NSW</span></span>

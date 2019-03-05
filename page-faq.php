@@ -37,13 +37,6 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#faq2" class="nav-link">Delivery</a>
-                                    <ul>
-                                        <li class="nav-item"><a href="#faq2_1" class="nav-link">How does it work?</a></li>
-                                        <li class="nav-item"><a href="#faq2_2" class="nav-link">How long does it take?</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
                                     <a href="#faq3" class="nav-link">Payments</a>
                                     <ul>
                                         <li class="nav-item"><a href="#faq3_1" class="nav-link">How does it work?</a></li>
@@ -89,5 +82,5 @@
         </section>
 
 <?php
-    include_once("header.php");
+    include_once("footer.php");
 ?>

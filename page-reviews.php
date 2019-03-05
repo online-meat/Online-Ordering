@@ -7,7 +7,7 @@
 
         <!-- Page Title -->
         <div class="page-title page-title-lg bg-dark dark">
-            <div class="bg-image bg-parallax"><img src="assets/img/photos/banner.jpg" alt=""></div>
+            <div class="bg-image bg-parallax"><img src="assets/img/photos/meat-banner.jpg" alt=""></div>
             <div class="row">
                 <div class="col-lg-4 push-lg-4 text-center">
                     <h1 class="mb-2">Reviews</h1>
@@ -113,7 +113,7 @@
             <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-8 push-lg-2">
-                        <h2 class="mb-3">Would you like to give Us a review?</h2>
+                        <h2 class="mb-3">Would you like to give a review?</h2>
                         <h5 class="text-muted">Do not hesitate to do that!</h5>
                         <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#reviewModal"><span>Write a review</span></button>
                     </div>

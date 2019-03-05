@@ -14,8 +14,7 @@
 <meta name="developer" content="IMSOFNET (tech@emeat.com.au)">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
-<frameset rows="*" cols="*" frameborder="NO" border="0"
-	framespacing="0" bordercolor="#bbccdd">
-	<frame src="home.php" name="topFrame" />
+<frameset cols="*">
+	<frame src="home.php">
 </frameset>
 </html>
