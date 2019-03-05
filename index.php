@@ -144,7 +144,7 @@
                     <div class="bg-image zooming"><img src="assets/img/photos/lamp22.jpg" alt=""></div>
                     <div class="container v-center">
                         <h1 class="display-2 mb-2 black">Order Meats Online</h1>
-                        <h4 class="text-muted mb-5">Delivered to your doorstep</h4>
+                        <h4 class="display-2 mb-2 black">Delivered to your doorstep</h4>
                         <div class="btn-group">
                             <a href="menu-grid-navigation.php" class="btn btn-outline-primary btn-lg"><span>Get it now!</span></a>
                             <span class="price price-lg">from $10.99/kg</span>
