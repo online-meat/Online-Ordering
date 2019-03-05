@@ -56,15 +56,15 @@
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
                             <li class="">
-                                <a href="index.html">Home</a>
+                                <a href="index.php">Home</a>
                             </li>
                             <li class="has-dropdown">
                                 <a href="#">About</a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
-                                        <li><a href="page-about.html">About Us</a></li>
-                                        <li><a href="page-reviews.html">Reviews</a></li>
-                                        <li><a href="page-faq.html">FAQ</a></li>
+                                        <li><a href="page-about.php">About Us</a></li>
+                                        <li><a href="page-reviews.php">Reviews</a></li>
+                                        <li><a href="page-faq.php">FAQ</a></li>
                                     </ul>
                                     <div class="dropdown-image">
                                         <img src="assets/img/photos/about.jpg" alt="">
@@ -78,17 +78,17 @@
                                         <li class="has-dropdown">
                                             <a href="#">Products</a>
                                             <ul>
-                                                <li><a href="menu-grid-navigation.html">All Products</a></li>
+                                                <li><a href="menu-grid-navigation.php">All Products</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="page-contact.html">Contact</a></li>
+                            <li><a href="page-contact.php">Contact</a></li>
                         </ul>
                     </nav>
                     <div class="module left">
-                        <a href="menu-list-navigation.html" class="btn btn-outline-secondary"><span>Order Now</span></a>
+                        <a href="menu-list-navigation.php" class="btn btn-outline-secondary"><span>Order Now</span></a>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -114,7 +114,7 @@
         </div>
 
         <div class="module module-logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/img/logo-horizontal-dark.svg" alt="">
             </a>
         </div>
@@ -160,7 +160,7 @@
                     <img src="assets/img/svg/sign.svg" alt="" class="mb-5">
                     <div style="margin-left: 50px">
                         <h4>What people say about Us?</h4>
-                        <a href="page-reviews.html" class="btn btn-outline-primary"><span>Check our reviews</span></a>
+                        <a href="page-reviews.php" class="btn btn-outline-primary"><span>Check our reviews</span></a>
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@
                 <div class="col-lg-8 push-lg-2">
                     <h2 class="mb-3">Would you like to order now?</h2>
                     <h5 class="text-muted">Make an online order now and enjoy great services!</h5>
-                    <a href="menu-grid-navigation.html" class="btn btn-primary"><span>Order Online</span></a>
+                    <a href="menu-grid-navigation.php" class="btn btn-primary"><span>Order Online</span></a>
                 </div>
             </div>
 
@@ -193,7 +193,7 @@
                         <span class="text-sm text-muted">Copyright &copy; 2019 eMeat Australia<br>Design by eMeat.</span>
                     </div>
                     <div class="col-lg-4 text-center">
-                        <a href="index.html"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
+                        <a href="index.php"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center text-md-right">
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
@@ -281,7 +281,7 @@
                 </div>
             </div>
         </div>
-        <a href="checkout.html" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
+        <a href="checkout.php" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
     </div>
 
     <!-- Panel Mobile -->

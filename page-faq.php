@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Title -->
-<title>eMeat Australia - Order Meat Online</title>
+<title>eMeat - Order Meat Online</title>
 
 <!-- Favicons -->
 <link rel="shortcut icon" href="assets/img/favicon.png">
@@ -56,15 +55,15 @@
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
                             <li class="">
-                                <a href="index.html">Home</a>
+                                <a href="index.php">Home</a>
                             </li>
                             <li class="has-dropdown">
                                 <a href="#">About</a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
-                                        <li><a href="page-about.html">About Us</a></li>
-                                        <li><a href="page-reviews.html">Reviews</a></li>
-                                        <li><a href="page-faq.html">FAQ</a></li>
+                                        <li><a href="page-about.php">About Us</a></li>
+                                        <li><a href="page-reviews.php">Reviews</a></li>
+                                        <li><a href="page-faq.php">FAQ</a></li>
                                     </ul>
                                     <div class="dropdown-image">
                                         <img src="assets/img/photos/about.jpg" alt="">
@@ -78,18 +77,18 @@
                                         <li class="has-dropdown">
                                             <a href="#">Products</a>
                                             <ul>
-                                                <li><a href="menu-grid-navigation.html">Meat</a></li>
-                                                <li><a href="menu-grid-collapse.html">Chicken</a></li>
+                                                <li><a href="menu-grid-navigation.php">Meat</a></li>
+                                                <li><a href="menu-grid-collapse.php">Chicken</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="page-contact.html">Contact</a></li>
+                            <li><a href="page-contact.php">Contact</a></li>
                         </ul>
                     </nav>
                     <div class="module left">
-                        <a href="menu-list-navigation.html" class="btn btn-outline-secondary"><span>Order Now</span></a>
+                        <a href="menu-list-navigation.php" class="btn btn-outline-secondary"><span>Order Now</span></a>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -116,7 +115,7 @@
         </div>
 
         <div class="module module-logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/img/logo-horizontal-dark.svg" alt="">
             </a>
         </div>
@@ -128,17 +127,17 @@
 
     </header>
     <!-- Header / End -->
-
     <!-- Content -->
     <div id="content">
 
         <!-- Page Title -->
         <div class="page-title bg-light">
+            <div class="bg-image bg-parallax"><img src="assets/img/photos/bg-desk.jpg" alt=""></div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 push-lg-4">
-                        <h1 class="mb-0">Contact Us</h1>
-                        <h4 class="text-muted mb-0"></h4>
+                        <h1 class="mb-0">FAQ</h1>
+                        <h4 class="text-muted mb-0">Frequently asked questions</h4>
                     </div>
                 </div>
             </div>
@@ -148,53 +147,64 @@
         <section class="section">
 
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 push-lg-1 col-md-6">
-                       <!--  <img src="assets/img/photos/The Crown_menu.png" alt="" class="mb-5" width="130">
- -->                        <h4 class="mb-0">eMeat Australia</h4>
-                        <span class="text-muted">Liverpool, New South Wales, Australia </span>
-                        <hr class="hr-md">
-                        <div class="row">
-                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                <h6 class="mb-1 text-muted">Mobile:</h6>
-                                0406602256, 0467099697
+                <div class="row">
+                    <div class="col-md-3">
+                        <!-- Side Navigation -->
+                        <nav id="side-navigation" class="stick-to-content pt-4" data-local-scroll>
+                            <h5 class="mb-3"><i class="ti ti-align-justify mr-3 text-muted"></i>Pick a content:</h5>
+                            <ul class="nav nav-vertical">
+                                <li class="nav-item">
+                                    <a href="#faq1" class="nav-link">General</a>
+                                    <ul>
+                                        <li class="nav-item"><a href="#faq1_1" class="nav-link">How does it work?</a></li>
+                                        <li class="nav-item"><a href="#faq1_2" class="nav-link">How long does it take?</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#faq2" class="nav-link">Delivery</a>
+                                    <ul>
+                                        <li class="nav-item"><a href="#faq2_1" class="nav-link">How does it work?</a></li>
+                                        <li class="nav-item"><a href="#faq2_2" class="nav-link">How long does it take?</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#faq3" class="nav-link">Payments</a>
+                                    <ul>
+                                        <li class="nav-item"><a href="#faq3_1" class="nav-link">How does it work?</a></li>
+                                        <li class="nav-item"><a href="#faq3_2" class="nav-link">How long does it take?</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-8 push-md-1">
+                        <div id="faq1">
+                            <h3><i class="ti ti-file mr-4 text-primary"></i>General info</h3>
+                            <hr>
+                            <div id="faq1_1" class="pb-5">
+                                <h4>How does it work?</h4>
+                                <p class="lead">Customers order their favourite meat online and get delivery same business day or after 0ne (1) business day with a pay on delivery option.</p>
+                                <p>We deliver product to Customer address at their preferred time of the day.</p>
                             </div>
-                           <div class="col-sm-6">
-                                <h6 class="mb-1 text-muted">E-mail:</h6>
-                                <a href="#">info@emeat.com.au</a>
+                            <div id="faq1_2" class="pb-5">
+                                <h4>How long does it take?</h4>
+                                <p class="lead">We strive to delivery products to our customers door step within the same business day but generally all orders are delivered a day after the order date.</p>
+
                             </div>
                         </div>
-                        <hr class="hr-md">
-                       <h6 class="mb-3 text-muted">Follow Us!</h6>
-                        <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="icon icon-social icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>
-                        <a href="#" class="icon icon-social icon-circle icon-sm icon-twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="icon icon-social icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
-                        <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
-                    </div>
-                    <div class="col-lg-5 push-lg-2 col-md-6">
-                        <div id="google-map" class="h-500 shadow">
-                            <form>
-                                <div style="text-align:center;color: black">
-                                    <h4>Please fill out this form</h4>
-                                </div>
-                                <div class="input-group">
-                                    <input name="name" id="message-name" type="text" class="form-control" placeholder="Full Name" required>
-                                </div>
-                                <div class="input-group">
-                                    <input name="email" id="message-email" type="email" class="form-control" placeholder="E-mail Address" required>
-                                </div>
-                                <div class="input-group">
-                                    <input name="phone" id="message-phone" type="number" class="form-control" placeholder="Phone Number" required>
-                                </div>
-                                <div class="input-group">
-                                    <textarea name="comment" rows="12" class="form-control" placeholder="Drop your message here!" required></textarea>
-                                </div>
-                                <div style="float:right;">
-                                    <input type="reset" value="Reset" class="btn btn-info"> &nbsp;&nbsp;
-                                    <input type="submit" value="Submit" class="btn  btn-success">
-                                </div>
-                            </form>
+
+                        <div id="faq3">
+                            <h3><i class="ti ti-wallet mr-4 text-primary"></i>Payments</h3>
+                            <hr>
+                            <div id="faq3_1" class="pb-5">
+                                <h4>How does it work?</h4>
+                                <p class="lead">A pay on delivery option is available as a means of flexibility.</p>
+                                <p>The pay on delivery option applies to all our products.</p>
+                            </div>
+                            <div id="faq3_2" class="pb-5">
+                                <h4>How long does it take?</h4>
+                                <p class="lead">Payment are made on the spot when products are delivered.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -202,52 +212,41 @@
 
         </section>
 
+        <!-- Section -->
+        <section class="section section-lg dark bg-dark">
+
+            <!-- BG Image -->
+            <div class="bg-image bg-parallax"><img src="assets/img/photos/banner.jpg" alt=""></div>
+
+            <div class="container text-center">
+                <div class="col-lg-8 push-lg-2">
+                    <h2 class="mb-3">Would you like to order now?</h2>
+                    <h5 class="text-muted">Make an online order now and enjoy great services!</h5>
+                    <a href="menu-list-navigation.php" class="btn btn-primary"><span>Order Online</span></a>
+                </div>
+            </div>
+
+        </section>
+
         <!-- Footer -->
-         <footer id="footer" class="bg-dark dark">
+        <footer id="footer" class="bg-dark dark">
 
             <div class="container">
-                <!-- Footer 1st Row -->
-                <div class="footer-first-row row">
-                    <div class="col-lg-3 text-center">
-                        <a href="index.html"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
+                <!-- Footer 2nd Row -->
+                <div class="footer-second-row row align-items-center">
+                    <div class="col-lg-4 text-center text-md-left">
+                        <span class="text-sm text-muted">Copyright &copy; 2019 eMeat Australia<br>Design by eMeat.</span>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h5 class="text-muted">Latest news</h5>
-                        <ul class="list-posts">
-                            <li>
-                                <a href="blog-post.html" class="title">Lauching of online meat platform</a>
-                                <span class="date">March 14, 2019</span>
-                            </li>
-                        </ul>
+                    <div class="col-lg-4 text-center">
+                        <a href="index.php"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
                     </div>
-                    <div class="col-lg-5 col-md-6">
-                        <h5 class="text-muted">Subscribe Us!</h5>
-                        <!-- MailChimp Form -->
-                        <form action="" id="sign-up-form" class="sign-up-form validate-form mb-3" method="POST">
-                            <div class="input-group">
-                                <input name="EMAIL" id="mce-EMAIL" type="email" class="form-control" placeholder="Tap your e-mail..." required>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary btn-submit" type="submit">
-                                        <span class="description">Subscribe</span>
-                                        <span class="success">
-                                            <svg x="0px" y="0px" viewBox="0 0 32 32"><path stroke-dasharray="19.79 19.79" stroke-dashoffset="19.79" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/></svg>
-                                        </span>
-                                        <span class="error">Try again...</span>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-                        <h5 class="text-muted mb-3">Social Media</h5>
+                    <div class="col-lg-4 col-md-6 text-center text-md-right">
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
                     </div>
-                </div>
-                <!-- Footer 2nd Row -->
-                <div class="footer-second-row">
-                    <span class="text-muted">Copyright © 2019 - eMeat.</span>
                 </div>
             </div>
 
@@ -327,7 +326,7 @@
                 </div>
             </div>
         </div>
-        <a href="checkout.html" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
+        <a href="checkout.php" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
     </div>
 
     <!-- Panel Mobile -->
@@ -498,10 +497,9 @@
 
 <!-- JS Core -->
 <script src="assets/js/core.js"></script>
-<script src="assets/js/prettify.js"></script>
 
-<!-- JS Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- JS Stylewsitcher -->
+<script src="styleswitcher/styleswitcher.js"></script>
 
 </body>
 

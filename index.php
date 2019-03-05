@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Title -->
-<title>eMeat - Order Meat Online</title>
+<title>eMeat Australia - Order Meat Online</title>
 
 <!-- Favicons -->
 <link rel="shortcut icon" href="assets/img/favicon.png">
@@ -29,6 +30,7 @@
 
 <!-- CSS Theme -->
 <link id="theme" rel="stylesheet" href="assets/css/themes/theme-beige.min.css" />
+
 
 </head>
 
@@ -55,15 +57,15 @@
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
                             <li class="">
-                                <a href="index.html">Home</a>
+                                <a href="index.php">Home</a>
                             </li>
                             <li class="has-dropdown">
                                 <a href="#">About</a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
-                                        <li><a href="page-about.html">About Us</a></li>
-                                        <li><a href="page-reviews.html">Reviews</a></li>
-                                        <li><a href="page-faq.html">FAQ</a></li>
+                                        <li><a href="page-about.php">About Us</a></li>
+                                        <li><a href="page-reviews.php">Reviews</a></li>
+                                        <li><a href="page-faq.php">FAQ</a></li>
                                     </ul>
                                     <div class="dropdown-image">
                                         <img src="assets/img/photos/about.jpg" alt="">
@@ -77,27 +79,30 @@
                                         <li class="has-dropdown">
                                             <a href="#">Products</a>
                                             <ul>
-                                                <li><a href="menu-grid-navigation.html">Meat</a></li>
-                                                <li><a href="menu-grid-collapse.html">Chicken</a></li>
+                                                <li><a href="menu-grid-navigation.php">All Products</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="page-contact.html">Contact</a></li>
+                            <li><a href="page-contact.php">Contact</a></li>
                         </ul>
                     </nav>
                     <div class="module left">
-                        <a href="menu-list-navigation.html" class="btn btn-outline-secondary"><span>Order Now</span></a>
+                        <a href="menu-grid-navigation.php" class="btn btn-outline-secondary"><span>Order Now</span></a>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <a href="#" class="module module-cart right" data-toggle="panel-cart">
+                 <!--   <a href="#" class="module module-cart right" data-toggle="panel-cart">
                         <span class="cart-icon">
                             <i class="ti ti-shopping-cart"></i>
                             <span class="notification">2</span>
                         </span>
                         <span class="cart-value">$32.98</span>
+                    </a>    -->
+                    <a href="#" class="module module-cart right" data-toggle="panel-cart">
+                        <span class="cart-value">Register</span>
+                        <span class="cart-value">Login</span>
                     </a>
                 </div>
             </div>
@@ -105,7 +110,6 @@
 
     </header>
     <!-- Header / End -->
-
 
     <!-- Header -->
     <header id="header-mobile" class="light">
@@ -115,7 +119,7 @@
         </div>
 
         <div class="module module-logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/img/logo-horizontal-dark.svg" alt="">
             </a>
         </div>
@@ -127,86 +131,294 @@
 
     </header>
     <!-- Header / End -->
+
     <!-- Content -->
     <div id="content">
 
-        <!-- Page Title -->
-        <div class="page-title bg-light">
-            <div class="bg-image bg-parallax"><img src="assets/img/photos/bg-desk.jpg" alt=""></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 push-lg-4">
-                        <h1 class="mb-0">FAQ</h1>
-                        <h4 class="text-muted mb-0">Frequently asked questions</h4>
+        <!-- Section - Main -->
+        <section class="section section-main section-main-2 bg-dark dark">
+
+            <div id="section-main-2-slider" class="section-slider inner-controls">
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/photos/lamp22.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h1 class="display-2 mb-2 black">Order Meats Online</h1>
+                        <h4 class="text-muted mb-5">Delivered to your doorstep</h4>
+                        <div class="btn-group">
+                            <a href="menu-grid-navigation.php" class="btn btn-outline-primary btn-lg"><span>Get it now!</span></a>
+                            <span class="price price-lg">from $10.99/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/carosel/car2.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h1 class="display-2 mb-2">Well-processed Steak</h1>
+                        <h4 class="text-muted mb-5">Order it online even now!</h4>
+                        <div class="btn-group">
+                            <a href="menu-grid-navigation.php" class="btn btn-outline-primary btn-lg"><span>Order now!</span></a>
+                            <span class="price price-lg">from $9.98/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/carosel/stake.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h4 class="text-muted mb-5">Order different types of meat</h4>
+                        <h1 class="display-2">Goat Meat</h1>
+                        <div class="btn-group">
+                            <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Call for it</span></a>
+                            <span class="price price-lg">from $9.98/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/carosel/car4.jpg" alt=""></div>
+                    <div class="container v-center">
+                        <h4 class="text-muted">Whole Meat Available</h4>
+                        <h1 class="display-2">Pay on Delivery!</h1>
+                        <div class="btn-group">
+                            <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Order this</span></a>
+                            <span class="price price-lg">from $9.98/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="bg-image zooming"><img src="assets/img/carosel/car5.PNG" alt=""></div>
+                    <div class="container v-center">
+                        <h4 class="text-muted">Halal source!</h4>
+                        <h1 class="display-2">Halal Products</h1>
+                        <div class="btn-group">
+                            <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Get it</span></a>
+                            <span class="price price-lg">from $9.98/kg</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Section -->
-        <section class="section">
+        </section>
+
+
+        <!-- Section - About -->
+        <section class="section section-bg-edge">
+
+            <div class="image left col-md-6">
+                <div class="bg-image"><img src="assets/img/photos/processing.jpg" alt=""></div>
+            </div>
 
             <div class="container">
+                <div class="col-lg-5 col-lg-push-7 col-md-9 push-md-6">
+                    <div class="rate mb-5 rate-lg"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
+                    <h1>Number 1 Online Meat Platform!</h1>
+                    <p class="lead text-muted mb-5">Access 100% Halal Products from Trusted Local Butchers...</p>
+                    <div class="blockquotes">
+                        <!-- Blockquote -->
+                        <blockquote class="blockquote light animated" data-animation="fadeInLeft">
+                            <div class="blockquote-content">
+                                <div class="rate rate-sm mb-3"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
+                                <p>It’ was amazing ordering my stake online!</p>
+                            </div>
+                            <footer>
+                                <span class="name">John Lee<span class="text-muted">, Liverpool NSW</span></span>
+                            </footer>
+                        </blockquote>
+                        <!-- Blockquote -->
+                        <blockquote class="blockquote animated" data-animation="fadeInRight" data-animation-delay="300">
+                            <div class="blockquote-content dark">
+                                <div class="rate rate-sm mb-3"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
+                                <p>Great platform and fast delivery!</p>
+                            </div>
+                            <footer>
+                                <span class="name">Kate Hudson<span class="text-muted">, Bankstown NSW</span></span>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- Section - Steps -->
+        <section class="section section-bg-edge dark">
+
+            <div class="container bg-dark">
+                <h2 class="text-center mb-4">How it works!</h2>
                 <div class="row">
-                    <div class="col-md-3">
-                        <!-- Side Navigation -->
-                        <nav id="side-navigation" class="stick-to-content pt-4" data-local-scroll>
-                            <h5 class="mb-3"><i class="ti ti-align-justify mr-3 text-muted"></i>Pick a content:</h5>
-                            <ul class="nav nav-vertical">
-                                <li class="nav-item">
-                                    <a href="#faq1" class="nav-link">General</a>
-                                    <ul>
-                                        <li class="nav-item"><a href="#faq1_1" class="nav-link">How does it work?</a></li>
-                                        <li class="nav-item"><a href="#faq1_2" class="nav-link">How long does it take?</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#faq2" class="nav-link">Delivery</a>
-                                    <ul>
-                                        <li class="nav-item"><a href="#faq2_1" class="nav-link">How does it work?</a></li>
-                                        <li class="nav-item"><a href="#faq2_2" class="nav-link">How long does it take?</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#faq3" class="nav-link">Payments</a>
-                                    <ul>
-                                        <li class="nav-item"><a href="#faq3_1" class="nav-link">How does it work?</a></li>
-                                        <li class="nav-item"><a href="#faq3_2" class="nav-link">How long does it take?</a></li>
-                                    </ul>
-                                </li>
+                    <div class="col-md-4">
+                        <!-- Step -->
+                        <div class="feature feature-1 mb-md-0">
+                            <div class="feature-icon icon icon-primary"><i class="ti ti-shopping-cart"></i></div>
+                            <div class="feature-content">
+                                <h4 class="mb-2"><a href="menu-list-collapse.php">Pick a meat</a></h4>
+                                <p class="text-muted mb-0">Search, select and order your preferred meat online on your mobile or desktop.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Step -->
+                        <div class="feature feature-1 mb-md-0">
+                            <div class="feature-icon icon icon-primary"><i class="ti ti-truck"></i></div>
+                            <div class="feature-content">
+                                <h4 class="mb-2">We deliver to your doorstep</h4>
+                                <p class="text-muted mb-0">Sit back and watch our drivers delivering your order to your house.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Step -->
+                        <div class="feature feature-1 mb-md-0">
+                            <div class="feature-icon icon icon-primary"><i class="ti ti-wallet"></i></div>
+                            <div class="feature-content">
+                                <h4 class="mb-2">Pay on Delivery</h4>
+                                <p class="text-muted mb-3">You pay for your order after it has been delivered to you.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Section - Offers -->
+        <section class="section bg-light">
+
+            <div class="container">
+                <h1 class="text-center mb-6">Special Products!</h1>
+                <div class="carousel" data-slick='{"dots": true, "autoplay": true}'>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/butcher1.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">Beef Tenderloin</h2>
+                            <h5 class="text-muted mb-5">Get discount of 10% from orders higher that $40!</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>Order any day of the week and get it the second day</li>
+                                <!--<li class="false">Order higher that $40</li>-->
+                                <li>Delivered frozen and pay on delivery</li>
                             </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-8 push-md-1">
-                        <div id="faq1">
-                            <h3><i class="ti ti-file mr-4 text-primary"></i>General info</h3>
-                            <hr>
-                            <div id="faq1_1" class="pb-5">
-                                <h4>How does it work?</h4>
-                                <p class="lead">Customers order their favourite meat online and get delivery same business day or after 0ne (1) business day with a pay on delivery option.</p>
-                                <p>We deliver product to Customer address at their preferred time of the day.</p>
-                            </div>
-                            <div id="faq1_2" class="pb-5">
-                                <h4>How long does it take?</h4>
-                                <p class="lead">We strive to delivery products to our customers door step within the same business day but generally all orders are delivered a day after the order date.</p>
-
-                            </div>
-                        </div>
-
-                        <div id="faq3">
-                            <h3><i class="ti ti-wallet mr-4 text-primary"></i>Payments</h3>
-                            <hr>
-                            <div id="faq3_1" class="pb-5">
-                                <h4>How does it work?</h4>
-                                <p class="lead">A pay on delivery option is available as a means of flexibility.</p>
-                                <p>The pay on delivery option applies to all our products.</p>
-                            </div>
-                            <div id="faq3_2" class="pb-5">
-                                <h4>How long does it take?</h4>
-                                <p class="lead">Payment are made on the spot when products are delivered.</p>
-                            </div>
                         </div>
                     </div>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/butcher2.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">Flat Iron Steak</h2>
+                            <h5 class="text-muted mb-5">Get discount of 10% from orders higher that $40!</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>Order any day of the week and get it the second day</li>
+                                <li>Delivered frozen</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/butcher3.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">7-Bone Chuck Roast</h2>
+                            <h5 class="text-muted mb-5">10% Off for all orders above $40!</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>Everyday of the week</li>
+                                <li>Online order</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Special Offer -->
+                    <div class="special-offer">
+                        <img src="assets/img/photos/butcher4.jpg" alt="" class="special-offer-image">
+                        <div class="special-offer-content">
+                            <h2 class="mb-2">Rib Eye Steak</h2>
+                            <h5 class="text-muted mb-5">Get delivered to your doorstep</h5>
+                            <ul class="list-check text-lg mb-0">
+                                <li>10% Off applies on order higher that $40</li>
+                                <li>Click to view more products</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Section - Menu -->
+        <section class="section pb-0">
+
+            <div class="container">
+                <h1 class="mb-6">Order Now!</h1>
+            </div>
+
+            <div class="menu-sample-carousel carousel inner-controls" data-slick='{
+                "dots": true,
+                "slidesToShow": 3,
+                "slidesToScroll": 1,
+                "autoplay": true,
+                "infinite": true,
+                "arrow-color": "black",
+                "responsive": [
+                    {
+                        "breakpoint": 991,
+                        "settings": {
+                            "slidesToShow": 2,
+                            "slidesToScroll": 1
+                        }
+                    },
+                    {
+                        "breakpoint": 690,
+                        "settings": {
+                            "slidesToShow": 1,
+                            "slidesToScroll": 1
+                        }
+                    }
+                ]
+            }'>
+                <!-- Menu Sample -->
+                <div class="menu-sample">
+                    <a href="menu-grid-navigation.php#Meat">
+                        <img src="assets/img/photos/beef.jpg" alt="" class="image">
+                        <h3 class="title"><b>Beef</b></h3>
+                    </a>
+                </div>
+                <!-- Menu Sample -->
+                <div class="menu-sample">
+                    <a href="menu-grid-navigation.php#Meat">
+                        <img src="assets/img/photos/mutton.jpg" alt="" class="image">
+                        <h3 class="title"><b>Mutton</b></h3>
+                    </a>
+                </div>
+                <!-- Menu Sample -->
+                <div class="menu-sample">
+                    <a href="menu-grid-navigation.php#Meat">
+                        <img src="assets/img/photos/lamb.jpg" alt="" class="image">
+                        <h3 class="title"><b>Lamb</b></h3>
+                    </a>
+                </div>
+                <!-- Menu Sample -->
+                <div class="menu-sample">
+                    <a href="menu-grid-navigation.php#Meat">
+                        <img src="assets/img/photos/calf.jpg" alt="" class="image">
+                        <h3 class="title"><b>Calf</b></h3>
+                    </a>
+                </div>
+                <!-- Menu Sample -->
+                <div class="menu-sample">
+                    <a href="menu-grid-navigation.php#Meat">
+                        <img src="assets/img/photos/chevon.jpg" alt="" class="image">
+                        <h3 class="title"><b>Chevon</b></h3>
+                    </a>
+                </div>
+                <!-- Menu Sample -->
+                <div class="menu-sample">
+                    <a href="menu-grid-navigation.php#Chicken">
+                        <img src="assets/img/photos/chicken.jpg" alt="" class="image">
+                        <h3 class="title"><b>Chicken</b></h3>
+                    </a>
                 </div>
             </div>
 
@@ -222,7 +434,7 @@
                 <div class="col-lg-8 push-lg-2">
                     <h2 class="mb-3">Would you like to order now?</h2>
                     <h5 class="text-muted">Make an online order now and enjoy great services!</h5>
-                    <a href="menu-list-navigation.html" class="btn btn-primary"><span>Order Online</span></a>
+                    <a href="menu-grid-navigation.php" class="btn btn-primary"><span>Order Online</span></a>
                 </div>
             </div>
 
@@ -238,7 +450,7 @@
                         <span class="text-sm text-muted">Copyright &copy; 2019 eMeat Australia<br>Design by eMeat.</span>
                     </div>
                     <div class="col-lg-4 text-center">
-                        <a href="index.html"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
+                        <a href="index.php"><img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5"></a>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center text-md-right">
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
@@ -326,7 +538,7 @@
                 </div>
             </div>
         </div>
-        <a href="checkout.html" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
+        <a href="checkout.php" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
     </div>
 
     <!-- Panel Mobile -->
@@ -497,6 +709,7 @@
 
 <!-- JS Core -->
 <script src="assets/js/core.js"></script>
+<script src="assets/js/prettify.js"></script>
 
 <!-- JS Stylewsitcher -->
 <script src="styleswitcher/styleswitcher.js"></script>

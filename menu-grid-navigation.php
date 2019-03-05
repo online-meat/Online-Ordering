@@ -61,15 +61,15 @@
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
                             <li class="">
-                                <a href="index.html">Home</a>
+                                <a href="index.php">Home</a>
                             </li>
                             <li class="has-dropdown">
                                 <a href="#">About</a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
-                                        <li><a href="page-about.html">About Us</a></li>
-                                        <li><a href="page-reviews.html">Reviews</a></li>
-                                        <li><a href="page-faq.html">FAQ</a></li>
+                                        <li><a href="page-about.php">About Us</a></li>
+                                        <li><a href="page-reviews.php">Reviews</a></li>
+                                        <li><a href="page-faq.php">FAQ</a></li>
                                     </ul>
                                     <div class="dropdown-image">
                                         <img src="assets/img/photos/about.jpg" alt="">
@@ -89,7 +89,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="page-contact.html">Contact</a></li>
+                            <li><a href="page-contact.php">Contact</a></li>
                         </ul>
                     </nav>
                     <div class="module left">
@@ -119,7 +119,7 @@
         </div>
 
         <div class="module module-logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/img/logo-horizontal-dark.svg" alt="">
             </a>
         </div>
@@ -308,7 +308,7 @@
                 </div>
             </div>
         </div>
-        <a href="checkout.html" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
+        <a href="checkout.php" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
     </div>
 
     <!-- Panel Mobile -->
