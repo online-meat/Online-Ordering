@@ -1,3 +1,8 @@
+<?php
+    require_once ('./config/config.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,18 +171,22 @@
                             </div>
                             <div class="menu-category-content padded">
                                 <div class="row gutters-sm">
+                                    <?php
+                                    $qnx = mysqli_query($connection,"select * from product where category_id=1");
+                                    while($dn = mysqli_fetch_array($qnx)){ ?>
                                     <div class="col-lg-6 col-12">
                                         <!-- Menu Item -->
                                         <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-burger.jpg" alt="">
-                                            <h6 class="mb-0">Beef Burger</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
+                                            <img class="mb-4" src="assets/img/photos/product/<?php echo $dn['img_url']; ?>" alt="">
+                                            <h6 class="mb-0"><?php echo $dn['product_name']; ?></h6>
+                                            <span class="text-muted text-sm">Beef, Lamb, Goat </span>
                                             <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
+                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">Price</span> $<?php echo $dn['price']; ?></span></div>
                                                 <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -189,78 +198,22 @@
                             </div>
                             <div class="menu-category-content padded">
                                 <div class="row gutters-sm">
-                                    <div class="col-lg-4 col-6">
+                                    <?php
+                                    $qnx = mysqli_query($connection,"select * from product where category_id=2");
+                                    while($dn = mysqli_fetch_array($qnx)){ ?>
+                                    <div class="col-lg-6 col-12">
                                         <!-- Menu Item -->
                                         <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-burger.jpg" alt="">
-                                            <h6 class="mb-0">Beef Burger</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
+                                            <img class="mb-4" src="assets/img/photos/product/<?php echo $dn['img_url']; ?>" alt="">
+                                            <h6 class="mb-0"><?php echo $dn['product_name']; ?></h6>
+                                            <span class="text-muted text-sm">Chicken, Duck, Turkey </span>
                                             <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
+                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">Price</span> $<?php echo $dn['price']; ?></span></div>
                                                 <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-6">
-                                        <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-pizza.jpg" alt="">
-                                            <h6 class="mb-0">Broccoli</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-6">
-                                        <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-chicken-burger.jpg" alt="">
-                                            <h6 class="mb-0">Chicken Burger</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-6">
-                                        <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-pasta.jpg" alt="">
-                                            <h6 class="mb-0">Creste di Galli</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-6">
-                                        <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-chicken-wings.jpg" alt="">
-                                            <h6 class="mb-0">Chicken wings</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-6">
-                                        <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/products/product-sushi.jpg" alt="">
-                                            <h6 class="mb-0">Nigiri-sushi</h6>
-                                            <span class="text-muted text-sm">Beef, cheese, potato, onion, fries</span>
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">from</span> $9.00</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
