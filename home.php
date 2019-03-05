@@ -36,8 +36,8 @@
                 <div class="slide">
                     <div class="bg-image zooming"><img src="assets/img/carosel/stake.jpg" alt=""></div>
                     <div class="container v-center">
-                        <h4 class="display-5 mb-2 black">Order different types of meat</h4>
-                        <h1 class="display-2 mb-2">Goat, Beef, Lamb, Chicken</h1>
+                        <h4 class="display-5 mb-2 black">Why wait.. Order now!</h4>
+                        <h1 class="display-2 mb-2">Rump Steak</h1>
                         <div class="btn-group">
                             <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Call for it</span></a>
                             <span class="price price-lg">from $9.98/kg</span>
@@ -179,7 +179,7 @@
                     <div class="special-offer">
                         <img src="assets/img/photos/butcher2.jpg" alt="" class="special-offer-image">
                         <div class="special-offer-content">
-                            <h2 class="mb-2">Flat Iron Steak</h2>
+                            <h2 class="mb-2">Beef Ribs, Roast Beef</h2>
                             <h5 class="text-muted mb-5">Get discount of 10% from orders higher that $40!</h5>
                             <ul class="list-check text-lg mb-0">
                                 <li>Order any day of the week and get it the second day</li>
@@ -189,9 +189,9 @@
                     </div>
                     <!-- Special Offer -->
                     <div class="special-offer">
-                        <img src="assets/img/photos/butcher3.jpg" alt="" class="special-offer-image">
+                        <img src="assets/img/photos/product/product17.jpg" alt="" class="special-offer-image">
                         <div class="special-offer-content">
-                            <h2 class="mb-2">7-Bone Chuck Roast</h2>
+                            <h2 class="mb-2">Ox-Tail, Osoboco</h2>
                             <h5 class="text-muted mb-5">10% Off for all orders above $40!</h5>
                             <ul class="list-check text-lg mb-0">
                                 <li>Everyday of the week</li>
