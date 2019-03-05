@@ -292,17 +292,17 @@
             </div>
 
         </section>
-
+        <section><div></div></section>
         <!-- Section -->
         <section class="section section-lg dark bg-dark">
 
             <!-- BG Image -->
-            <div class="bg-image bg-parallax"><img src="assets/img/photos/banner.jpg" alt=""></div>
+            <div class="bg-image bg-parallax"><img src="assets/img/photos/meat-banner.jpg" alt=""></div>
 
             <div class="container text-center">
                 <div class="col-lg-8 push-lg-2">
-                    <h2 class="mb-3">Would you like to order now?</h2>
-                    <h5 class="text-muted">Make an online order now and enjoy great services!</h5>
+                    <h2 class="display-2 mb-3">Would you like to order now?</h2>
+                    <h5 class="display-5">Make an online order now and enjoy great services!</h5>
                     <a href="menu-grid-navigation.php" class="btn btn-primary"><span>Order Online</span></a>
                 </div>
             </div>
