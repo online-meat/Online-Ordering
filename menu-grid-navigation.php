@@ -176,8 +176,8 @@
                                     while($dn = mysqli_fetch_array($qnx)){ ?>
                                     <div class="col-lg-6 col-12">
                                         <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/photos/product/<?php echo $dn['img_url']; ?>" alt="">
+                                        <div class="menu-item menu-grid-item" style="border: 1px solid black;">
+                                            <img class="mb-4" style="width:393px;height:277px" src="assets/img/photos/product/<?php echo $dn['img_url']; ?>" alt="">
                                             <h6 class="mb-0"><?php echo $dn['product_name']; ?></h6>
                                             <span class="text-muted text-sm">Beef, Lamb, Goat </span>
                                             <div class="row align-items-center mt-4">
@@ -203,8 +203,8 @@
                                     while($dn = mysqli_fetch_array($qnx)){ ?>
                                     <div class="col-lg-6 col-12">
                                         <!-- Menu Item -->
-                                        <div class="menu-item menu-grid-item">
-                                            <img class="mb-4" src="assets/img/photos/product/<?php echo $dn['img_url']; ?>" alt="">
+                                        <div class="menu-item menu-grid-item" style="border: 1px solid black;">
+                                            <img class="mb-4" style="width:393px;height:277px" src="assets/img/photos/product/<?php echo $dn['img_url']; ?>" alt="">
                                             <h6 class="mb-0"><?php echo $dn['product_name']; ?></h6>
                                             <span class="text-muted text-sm">Chicken, Duck, Turkey </span>
                                             <div class="row align-items-center mt-4">
