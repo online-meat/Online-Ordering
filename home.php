@@ -5,7 +5,7 @@
     <div id="content">
 
         <!-- Section - Main -->
-        <section class="section section-main section-main-2 bg-dark dark">
+        <section class="section section-main section-main-2 dark">
 
             <div id="section-main-2-slider" class="section-slider inner-controls">
                 <!-- Slide -->
