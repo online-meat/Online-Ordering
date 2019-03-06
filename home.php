@@ -125,7 +125,7 @@
                         <div class="feature feature-1 mb-md-0">
                             <div class="feature-icon icon icon-primary"><i class="ti ti-shopping-cart"></i></div>
                             <div class="feature-content">
-                                <h4 class="mb-2"><a href="menu-list-collapse.php">Pick a meat</a></h4>
+                                <h4 class="mb-2"><a href="menu-grid-navigation.php">Pick a meat</a></h4>
                                 <p class="text-muted mb-0">Search, select and order your preferred meat online on your mobile or desktop.</p>
                             </div>
                         </div>
