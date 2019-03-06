@@ -10,7 +10,7 @@
             <div id="section-main-2-slider" class="section-slider inner-controls">
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="bg-image zooming"><img src="assets/img/photos/lamp22.jpg" alt=""></div>
+                    <div class="bg-image zooming"><img src="assets/img/photos/lam.jpg" alt=""></div>
                     <div class="container v-center">
                         <h1 class="display-2 mb-2 black">Order Meats Online</h1>
                         <h4 class="display-5 mb-2 black">Delivered to your doorstep</h4>
@@ -22,7 +22,7 @@
                 </div>
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="bg-image zooming"><img src="assets/img/carosel/car2.jpg" alt=""></div>
+                    <div class="bg-image zooming"><img src="assets/img/carosel/car.jpg" alt=""></div>
                     <div class="container v-center">
                         <h1 class="display-2 mb-2">Well-processed Steak</h1>
                         <h4 class="display-5 mb-2 black">Order it online even now!</h4>
@@ -34,7 +34,7 @@
                 </div>
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="bg-image zooming"><img src="assets/img/carosel/stake.jpg" alt=""></div>
+                    <div class="bg-image zooming"><img src="assets/img/carosel/stak.jpg" alt=""></div>
                     <div class="container v-center">
                         <h4 class="display-5 mb-2 black">Why wait.. Order now!</h4>
                         <h1 class="display-2 mb-2">Rump Steak</h1>
@@ -46,7 +46,7 @@
                 </div>
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="bg-image zooming"><img src="assets/img/carosel/car4.jpg" alt=""></div>
+                    <div class="bg-image zooming"><img src="assets/img/carosel/car.jpg" alt=""></div>
                     <div class="container v-center">
                         <h4 class="display-5 mb-2 black">Whole Meat Available</h4>
                         <h1 class="display-2 mb-2">Pay on Delivery!</h1>
@@ -58,7 +58,7 @@
                 </div>
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="bg-image zooming"><img src="assets/img/carosel/car5.PNG" alt=""></div>
+                    <div class="bg-image zooming"><img src="assets/img/carosel/car.PNG" alt=""></div>
                     <div class="container v-center">
                         <h4 class="display-5 mb-2 black">From Halal source!</h4>
                         <h1 class="display-2 mb-2">Halal Products</h1>
