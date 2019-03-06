@@ -16,7 +16,8 @@
             $req = mysqli_query($connection,"select * from customer where email='$email'");
             if(mysqli_num_rows($req) == 0){
                 mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt')");
-                    echo "<script>alert('Your account has been created successfully');</script>";
+                mail($email,"eMeat Australia","Welcome to eMeat Australia");
+                echo "<script>alert('Your account has been created successfully');</script>";
             }else{
                 echo "<script>alert('The email used has already been registered. Please use another email address.');</script>";
             }
