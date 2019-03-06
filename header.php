@@ -40,6 +40,7 @@
 			$_SESSION['phone'] = $dn['phone'];
 			$_SESSION['state'] = $dn['state'];
 			$_SESSION['postcode'] = $dn['postcode'];
+			$_SESSION['confirmed'] = $dn['confirmed'];
 			$_SESSION['islog'] = true;
         }else{
             echo "<script>alert('Cannot login: Wrong username/password');</script>";
