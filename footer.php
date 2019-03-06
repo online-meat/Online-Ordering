@@ -436,7 +436,8 @@
             xmlhttp.open("GET",url,false);
             xmlhttp.send();
         }
-        //alert(xmlhttp.responseText);
+
+        // "<div class='alert alert-success' role='alert'></div>";
         document.getElementById('lott').value = xmlhttp.responseText
     }
 </script>

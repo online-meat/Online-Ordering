@@ -11,6 +11,7 @@ if(isset($mtype)){
 		echo $xmt;
 	}elseif($mtype=='confirmation'){
         $email=$_GET['liame'];
+        $active=$_GET['activation'];
     }elseif($mtype=='logout'){
         if(isset($_SESSION['islog'])){
             unset($_SESSION['islog'], $_SESSION['lname'], $_SESSION['email'], $_SESSION['fname'], $_SESSION['uid'], $_SESSION['postcode'], $_SESSION['phone'], $_SESSION['state'], $_SESSION['confirmed'], $_SESSION['address']);

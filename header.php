@@ -16,8 +16,16 @@
             $req = mysqli_query($connection,"select * from customer where email='$email'");
             if(mysqli_num_rows($req) == 0){
                 mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt')");
+                //$headers = "MIME-Version: 1.0" . "\r\n";
+                //$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                // More headers
+                //$headers .= 'From: <webmaster@example.com>' . "\r\n";
+                //$headers .= 'Cc: myboss@example.com' . "\r\n";
+                //$subject = 'Welcome to eMeat Australia - Email Activation';
+                //mail($to,$subject,$message,$headers);
                 mail($email,"eMeat Australia","Welcome to eMeat Australia");
-                echo "<script>alert('Your account has been created successfully');</script>";
+                echo "<script>alert('Your account has been created successfully. An activation email has been sent to your email. Please click on the activation link provided to activate your account.');</script>";
             }else{
                 echo "<script>alert('The email used has already been registered. Please use another email address.');</script>";
             }
@@ -32,18 +40,22 @@
         $req = mysqli_query($connection,"select * from customer where email='$email'");
 		$dn = mysqli_fetch_array($req);
 		if(($dn['password']==$encrypt) and mysqli_num_rows($req)>0){
-			$_SESSION['email'] = $email;
-			$_SESSION['uid'] = $dn['customer_id'];
-			$_SESSION['fname'] = $dn['firstname'];
-			$_SESSION['lname'] = $dn['lastname'];
-			$_SESSION['address'] = $dn['address'];
-			$_SESSION['phone'] = $dn['phone'];
-			$_SESSION['state'] = $dn['state'];
-			$_SESSION['postcode'] = $dn['postcode'];
-			$_SESSION['confirmed'] = $dn['confirmed'];
-			$_SESSION['islog'] = true;
+            if($dn['confirmed']==1){
+                $_SESSION['email'] = $email;
+                $_SESSION['uid'] = $dn['customer_id'];
+                $_SESSION['fname'] = $dn['firstname'];
+                $_SESSION['lname'] = $dn['lastname'];
+                $_SESSION['address'] = $dn['address'];
+                $_SESSION['phone'] = $dn['phone'];
+                $_SESSION['state'] = $dn['state'];
+                $_SESSION['postcode'] = $dn['postcode'];
+                $_SESSION['confirmed'] = $dn['confirmed'];
+                $_SESSION['islog'] = true;
+            }else{
+               echo "<script>alert('Account has not been activated. Please activate your account first.');</script>";
+            }
         }else{
-            echo "<script>alert('Cannot login: Wrong username/password');</script>";
+            echo "<script>alert('Cannot login: Wrong username/password.');</script>";
         }
     }
 ?>
