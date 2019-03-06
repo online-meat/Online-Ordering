@@ -18,6 +18,8 @@
         }else{
             echo "<script>alert('Please select your suburb');</script>";
         }
+    }elseif(isset($_POST['regform'])){
+
     }
 ?>
 

@@ -91,16 +91,17 @@
                         <form action="#">
                             <div class="form-group">
                                 <label>Email Address:</label>
-                                <input type="email" class="form-control" placeholder="Email Address" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                             </div>
                             <div class="form-group">
                                 <label>Password:</label>
-                                <input type="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary" value="Login"/>
-                                <button class="btn btn-secondary fa fa-lock"  data-toggle="modal" data-target="#signModal" onclick="closeModal('#loginModa')">Register</button>
+                                <button class="btn btn-secondary fa fa-lock"  data-toggle="modal" data-target="#signModal">Register</button>
                             </div>
+                            <input type="hidden" name='logform' value="TRUE" />
                         </form>
                     </div>
                     <div align="center">
@@ -172,7 +173,7 @@
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary " value="Register"/>
                             </div>
-                            <input name='regform' value="TRUE" />
+                            <input type="hidden" name='regform' value="TRUE" />
                         </form>
                     </div>
                     <div align="center">
