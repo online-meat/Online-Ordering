@@ -1,7 +1,7 @@
 <?php
     require_once ('./config/config.php');
 
-    if(isset($_POST['memedit'])){
+    if(isset($_POST['regform'])){
         $fname = mysqli_real_escape_string($connection,$_POST['fname']);
         $lname = mysqli_real_escape_string($connection,$_POST['lname']);
         $address = mysqli_real_escape_string($connection,$_POST['address']);
