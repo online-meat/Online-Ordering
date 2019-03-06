@@ -12,14 +12,16 @@
         $password = mysqli_real_escape_string($connection,$_POST['password']);
         $encrypt = sha1($password);
 
-        if (empty($postcode != -1)){
+        if ($postcode != -1){
             mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address','$phone',$postcode,'$state','$email','$encrypt')");
                 echo "<script>alert('Your account has been created successfully');</script>";
         }else{
             echo "<script>alert('Please select your suburb');</script>";
         }
     }elseif(isset($_POST['regform'])){
-
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $password = mysqli_real_escape_string($connection,$_POST['password']);
+        $encrypt = sha1($password);
     }
 ?>
 

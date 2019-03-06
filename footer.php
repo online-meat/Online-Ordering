@@ -433,7 +433,7 @@
             xmlhttp.open("GET",url,false);
             xmlhttp.send();
         }
-        alert(xmlhttp.responseText);
+        //alert(xmlhttp.responseText);
         document.getElementById('lott').value = xmlhttp.responseText
     }
 </script>
