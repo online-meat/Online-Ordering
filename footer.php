@@ -267,10 +267,14 @@
         </div>
 
         <nav class="module module-navigation"></nav>
+        <?php if($_SESSION['islog']){ ?>
         <div class="module module-cart right">
             <a href="#" class="btn" data-toggle="modal" data-target="#signModal"><i class=" fa fa-star"></i> Register</a>
             <a href="#" class="btn" data-toggle="modal" data-target="#loginModal"><i class=" fa fa-clock-o"></i>  Login</a>
         </div>
+        <?php }else{ ?>
+            <a href="?act=logout"><i class=" fa fa-clock-o"></i>  Logout</a>
+        <?php } ?>
         <div class="module module-social">
             <h6 class="text-sm mb-3">Follow Us!</h6>
             <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>

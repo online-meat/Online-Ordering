@@ -13,8 +13,13 @@
         $encrypt = sha1($password);
 
         if ($postcode != -1){
-            mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt')");
-                echo "<script>alert('Your account has been created successfully');</script>";
+            $req = mysqli_query($connection,"select * from customer where email='$email'");
+            if(mysqli_num_rows($req) == 0){
+                mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt')");
+                    echo "<script>alert('Your account has been created successfully');</script>";
+            }else{
+                echo "<script>alert('The email used has already been registered. Please use another email address.');</script>";
+            }
         }else{
             echo "<script>alert('Please select your suburb');</script>";
         }
@@ -22,6 +27,22 @@
         $email = mysqli_real_escape_string($connection,$_POST['email']);
         $password = mysqli_real_escape_string($connection,$_POST['password']);
         $encrypt = sha1($password);
+
+        $req = mysqli_query($connection,"select * from customer where email='$email'");
+		$dn = mysqli_fetch_array($req);
+		if(($dn['password']==$encrypt) and mysqli_num_rows($req)>0){
+			$_SESSION['email'] = $email;
+			$_SESSION['uid'] = $dn['customer_id'];
+			$_SESSION['fname'] = $dn['firstname'];
+			$_SESSION['lname'] = $dn['lastname'];
+			$_SESSION['address'] = $dn['address'];
+			$_SESSION['phone'] = $dn['phone'];
+			$_SESSION['state'] = $dn['state'];
+			$_SESSION['postcode'] = $dn['postcode'];
+			$_SESSION['islog'] = true;
+        }else{
+            echo "<script>alert('Cannot login: Wrong username/password');</script>";
+        }
     }
 ?>
 
@@ -137,17 +158,20 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                 <!--   <a href="#" class="module module-cart right" data-toggle="panel-cart">
+                    <?php if($_SESSION['islog']){ ?>
+                   <a href="#" class="module module-cart right" data-toggle="panel-cart">
                         <span class="cart-icon">
                             <i class="ti ti-shopping-cart"></i>
                             <span class="notification">2</span>
                         </span>
                         <span class="cart-value">$32.98</span>
-                    </a>    -->
+                    </a>
+                    <?php }else{ ?>
                     <a href="#" class="module module-cart right">
                         <span class="cart-value" data-toggle="modal" data-target="#signModal">Register</span>
                         <span class="cart-value" data-toggle="modal" data-target="#loginModal">Login</span>
                     </a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -168,16 +192,16 @@
             </div>
             <div id="searchresult1" align="left"></div>
         </div>
-        <!--
+        <?php if($_SESSION['islog']){ ?>
         <a href="#" class="module module-cart" data-toggle="panel-cart">
             <i class="ti ti-shopping-cart"></i>
             <span class="notification">2</span>
         </a>
-        -->
-
+        <?php }else{ ?>
         <div class="module module-cart right">
             <a href="#" class="btn fa fa-lock" data-toggle="modal" data-target="#loginModal"> Login</a>
         </div>
+        <?php } ?>
 
     </header>
     <!-- Header / End -->
