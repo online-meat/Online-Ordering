@@ -99,14 +99,13 @@
                             </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary" value="Login"/>
-                                <button class="btn btn-secondary fa fa-lock"  data-toggle="modal" data-target="#signModal">Register</button>
                             </div>
                             <input type="hidden" name='logform' value="TRUE" />
                         </form>
                     </div>
                     <div align="center">
                         Don't have an account? <a href="#" class="btn" data-toggle="modal" data-target="#signModal">Register</a>
-                        Forget your password? <a href="#" class="btn" data-toggle="modal" data-target="#forgetModal">Get it</a>
+                        Forget password? <a href="#" class="btn" data-toggle="modal" data-target="#forgetModal">Get it</a>
                     </div>
                 </div>
             </div>
