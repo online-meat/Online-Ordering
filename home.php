@@ -48,7 +48,7 @@
                 <div class="slide">
                     <div class="bg-image zooming"><img src="assets/img/carosel/car4.jpg" alt=""></div>
                     <div class="container v-center">
-                        <h4 class="display-5 mb-2 black">Whole Meat Available</h4>
+                        <h4 class="display-5 mb-2 black">Whole Goat Meat Available</h4>
                         <h1 class="display-2 mb-2">Pay on Delivery!</h1>
                         <div class="btn-group">
                             <a href="menu-grid-navigation.php" data-toggle="modal" class="btn btn-outline-primary btn-lg"><span>Order this</span></a>

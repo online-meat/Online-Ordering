@@ -34,6 +34,16 @@
 <!-- CSS Theme -->
 <link id="theme" rel="stylesheet" href="assets/css/themes/theme-beige.min.css" />
 
+    <style type="text/css">
+		#searchbox {width: 300px;}
+        #searchresult {width: 300px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
+		.row1 img {width:25px;height:25px;border-radius:50%;vertical-align:middle; margin-right: 5px;}
+		.row1 {font-weight: 500; color: purple; padding: 1px; background: lightyellow;}
+        .row1:hover {background-color:#eee}
+
+        #searchbox1 {width: 280px;}
+        #searchresult1 {width: 280px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
+	</style>
 
 </head>
 
@@ -47,7 +57,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <!-- Logo -->
                     <div class= "light">
                         <a href="#">
@@ -55,7 +65,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-5">
                     <!-- Navigation -->
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
@@ -95,6 +105,14 @@
                         <a href="menu-grid-navigation.php" class="btn btn-outline-secondary"><span>Order Now</span></a>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="module">
+                        <div class="">
+                            <input name="search" id="searchbox" type="search" class="form-control" placeholder="Search Products...">
+                        </div>
+                        <div id="searchresult"></div>
+                    </div>
+                </div>
                 <div class="col-md-2">
                  <!--   <a href="#" class="module module-cart right" data-toggle="panel-cart">
                         <span class="cart-icon">
@@ -122,9 +140,10 @@
         </div>
 
         <div class="module module-logo">
-            <a href="index.php">
-                <img src="assets/img/logo-light.svg" alt="">
-            </a>
+            <div class="">
+                <input name="search" id="searchbox1" type="search" class="form-control" placeholder="Search Products...">
+            </div>
+            <div id="searchresult1" align="left"></div>
         </div>
         <!--
         <a href="#" class="module module-cart" data-toggle="panel-cart">
@@ -134,8 +153,7 @@
         -->
 
         <a href="#" class="module module-cart right" data-toggle="panel-cart">
-            <span class="cart-value">Register</span>
-            <span class="cart-value">Login</span>
+            <span class="btn btn-primary">Login</span>
         </a>
 
     </header>
