@@ -16,7 +16,12 @@
 <meta name="developer" content="IMSOFNET (tech@emeat.com.au)">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
+    <!--
 <frameset cols="*">
-	<frame src="home.php">
+	<frame src="./home.php">
 </frameset>
+    -->
+<?php
+    include_once("home.php");
+?>
 </html>
