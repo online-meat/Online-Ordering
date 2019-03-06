@@ -2,30 +2,21 @@
     require_once ('./config/config.php');
 
     if(isset($_POST['memedit'])){
-        $name = mysqli_real_escape_string($connection,$_POST['name']);
-        $phone = mysqli_real_escape_string($connection,$_POST['phone']);
-        $gender = mysqli_real_escape_string($connection,$_POST['gender']);
-        $dob = mysqli_real_escape_string($connection,$_POST['dob']);
-        $nok = mysqli_real_escape_string($connection,$_POST['nok']);
+        $fname = mysqli_real_escape_string($connection,$_POST['fname']);
+        $lname = mysqli_real_escape_string($connection,$_POST['lname']);
         $address = mysqli_real_escape_string($connection,$_POST['address']);
-        $bgroup = mysqli_real_escape_string($connection,$_POST['bgroup']);
-        $geno = mysqli_real_escape_string($connection,$_POST['geno']);
-        $hmo = mysqli_real_escape_string($connection,$_POST['hmo']);
-        $details = mysqli_real_escape_string($connection,$_POST['details']);
+        $phone = mysqli_real_escape_string($connection,$_POST['phone']);
+        $postcode = mysqli_real_escape_string($connection,$_POST['postcode']);
+        $state = mysqli_real_escape_string($connection,$_POST['state']);
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $password = mysqli_real_escape_string($connection,$_POST['password']);
+        $encrypt = sha1($password);
 
-        $enable = 0;
-
-        if (empty($f)){
-            $id = $_POST['memid'];
-            if($enable==0){
-                mysqli_query($connection,"update patient set enable=$enable,bgroup=$bgroup,geno=$geno,hmo=$hmo,name='$name',sex=$gender,dob='$dob',address='$address',phone='$phone',nextkin='$nok',details='$details',ban=1 where id=$id");
-                echo "<script>alert('Patient $name edited successfully');</script>";
-            }else{
-                mysqli_query($connection,"update patient set enable=$enable,password='$pin',bgroup=$bgroup,geno=$geno,hmo=$hmo,name='$name',sex=$gender,dob='$dob',address='$address',phone='$phone',nextkin='$nok',details='$details',ban=1 where id=$id");
-                echo "<script>alert('Staff member $name edited successfully');</script>";
-            }
+        if (empty($postcode != -1)){
+            mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address','$phone',$postcode,'$state','$email','$encrypt')");
+                echo "<script>alert('Your account has been created successfully');</script>";
         }else{
-            echo "<script>alert('Patient details cannot be saved check all fields and try again');</script>";
+            echo "<script>alert('Please select your suburb');</script>";
         }
     }
 ?>
