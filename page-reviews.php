@@ -108,7 +108,7 @@
         <!-- Section -->
         <section class="section section-lg dark bg-dark">
 
-            <div class="bg-image bg-parallax"><img src="assets/img/photos/bg-review.jpg" alt=""></div>
+            <div class="bg-image bg-parallax"><img src="assets/img/images/review.jpg" alt=""></div>
 
             <div class="container text-center">
                 <div class="row">
@@ -127,7 +127,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header modal-header-lg dark bg-dark">
-                <div class="bg-image"><img src="assets/img/photos/modal-review.jpg" alt=""></div>
+                <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
                 <h4 class="modal-title">Write a review!</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
             </div>

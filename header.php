@@ -1,5 +1,33 @@
 <?php
     require_once ('./config/config.php');
+
+    if(isset($_POST['memedit'])){
+        $name = mysqli_real_escape_string($connection,$_POST['name']);
+        $phone = mysqli_real_escape_string($connection,$_POST['phone']);
+        $gender = mysqli_real_escape_string($connection,$_POST['gender']);
+        $dob = mysqli_real_escape_string($connection,$_POST['dob']);
+        $nok = mysqli_real_escape_string($connection,$_POST['nok']);
+        $address = mysqli_real_escape_string($connection,$_POST['address']);
+        $bgroup = mysqli_real_escape_string($connection,$_POST['bgroup']);
+        $geno = mysqli_real_escape_string($connection,$_POST['geno']);
+        $hmo = mysqli_real_escape_string($connection,$_POST['hmo']);
+        $details = mysqli_real_escape_string($connection,$_POST['details']);
+
+        $enable = 0;
+
+        if (empty($f)){
+            $id = $_POST['memid'];
+            if($enable==0){
+                mysqli_query($connection,"update patient set enable=$enable,bgroup=$bgroup,geno=$geno,hmo=$hmo,name='$name',sex=$gender,dob='$dob',address='$address',phone='$phone',nextkin='$nok',details='$details',ban=1 where id=$id");
+                echo "<script>alert('Patient $name edited successfully');</script>";
+            }else{
+                mysqli_query($connection,"update patient set enable=$enable,password='$pin',bgroup=$bgroup,geno=$geno,hmo=$hmo,name='$name',sex=$gender,dob='$dob',address='$address',phone='$phone',nextkin='$nok',details='$details',ban=1 where id=$id");
+                echo "<script>alert('Staff member $name edited successfully');</script>";
+            }
+        }else{
+            echo "<script>alert('Patient details cannot be saved check all fields and try again');</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +42,11 @@
 <title>eMeat Australia - Order Meat Online</title>
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="assets/img/favicon.png">
-<link rel="apple-touch-icon" href="assets/img/favicon_60x60.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon_76x76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon_120x120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon_152x152.png">
+<link rel="shortcut icon" href="assets/img/Company%20Logo.png">
+<link rel="apple-touch-icon" href="assets/img/Company%20Logo.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/img/Company%20Logo.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/img/Company%20Logo.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/img/Company%20Logo.png">
 
 <!-- CSS Plugins -->
 <link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css" />
@@ -121,9 +149,9 @@
                         </span>
                         <span class="cart-value">$32.98</span>
                     </a>    -->
-                    <a href="#" class="module module-cart right" data-toggle="modal" data-target="#loginModal">
-                        <span class="cart-value">Register</span>
-                        <span class="cart-value">Login</span>
+                    <a href="#" class="module module-cart right">
+                        <span class="cart-value" data-toggle="modal" data-target="#signModal">Register</span>
+                        <span class="cart-value" data-toggle="modal" data-target="#loginModal">Login</span>
                     </a>
                 </div>
             </div>
@@ -152,9 +180,9 @@
         </a>
         -->
 
-        <a href="#" class="module module-cart right" data-toggle="modal" data-target="#loginModal">
-            <span class="btn btn-primary">Login</span>
-        </a>
+        <div class="module module-cart right">
+            <a href="#" class="btn fa fa-lock" data-toggle="modal" data-target="#loginModal"> Login</a>
+        </div>
 
     </header>
     <!-- Header / End -->

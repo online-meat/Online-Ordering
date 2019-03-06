@@ -45,14 +45,46 @@
         </footer>
         <!-- Footer / End -->
 
+        <script type="text/javascript">
+            function closeModal(idx){
+                $(idx).modal('hide');
+            }
+        </script>
 
-                <!-- Modal / Review -->
+        <!-- Modal / Login -->
+        <div class="modal fade" id="forgetModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-lg dark bg-dark">
+                        <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
+                        <h4 class="modal-title fa fa-user-circle"> Retrieve your password</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group">
+                                <label>Email Address:</label>
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="btn btn-primary" value="Login"/>
+                                <button class="btn btn-secondary fa fa-lock"  data-toggle="modal" data-target="#signModal">Retrieve</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div align="center">
+                        Don't have an account? <a href="#" class="btn" data-toggle="modal" data-target="#signModal">Register</a>
+                        Forget your password? <a href="#" class="btn" data-toggle="modal" data-target="#forgetModal">Get it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="loginModal" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header modal-header-lg dark bg-dark">
                         <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
-                        <h4 class="modal-title">Login</h4>
+                        <h4 class="modal-title fa fa-user-circle"> Login</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
                     </div>
                     <div class="modal-body">
@@ -63,16 +95,88 @@
                             </div>
                             <div class="form-group">
                                 <label>Password:</label>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" class="form-control" placeholder="Password" required>
                             </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary" value="Login"/>
-                                <button class="btn btn-secondary">Register</button>
+                                <button class="btn btn-secondary fa fa-lock"  data-toggle="modal" data-target="#signModal" onclick="closeModal('#loginModa')">Register</button>
                             </div>
                         </form>
                     </div>
                     <div align="center">
-                        <a href="#" class="">Forgot your password?</a>
+                        Don't have an account? <a href="#" class="btn" data-toggle="modal" data-target="#signModal">Register</a>
+                        Forget your password? <a href="#" class="btn" data-toggle="modal" data-target="#forgetModal">Get it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+
+        ?>
+        <div class="modal fade" id="signModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-lg dark bg-dark">
+                        <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
+                        <h4 class="modal-title fa fa-user-circle"> Sign Up</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label>First Name:</label>
+                                <input type="text" name="fname" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name:</label>
+                                <input type="text" name="lname" class="form-control" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>House Address:</label>
+                                <textarea rows="4" name="address" class="form-control" placeholder="House Address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Area/Suburb:</label>
+                                <select style="color:purple;font-weight:400;" name="postcode" class="form-control" onChange="createLot(this.value);">
+                                    <option value="-1">Select your Area or Suburb</option>
+                                  <?php
+                                      $qnx = mysqli_query($connection,"SELECT * FROM postcode ORDER BY city asc");
+                                      while($dns = mysqli_fetch_array($qnx)){  ?>
+                                        <option value="<?php echo $dns['postcode_id']; ?>"><?php echo $dns['city']; ?></option>
+                                <?php } ?>
+					           </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Post Code:</label>
+                                <input style="color:purple;font-weight:400" id="lott" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>State:</label>
+                                <select name="state" class="form-control" onchange="">
+                                    <option value="New South Wales">New South Wales</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number:</label>
+                                <input type="number" name="phone" class="form-control" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address:</label>
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="btn btn-primary " value="Register"/>
+                            </div>
+                            <input name='regform' value="TRUE" />
+                        </form>
+                    </div>
+                    <div align="center">
+                        Already Registered? <a href="#" class="btn" data-toggle="modal" data-target="#loginModal">Login</a>
                     </div>
                 </div>
             </div>
@@ -162,6 +266,10 @@
         </div>
 
         <nav class="module module-navigation"></nav>
+        <div class="module module-cart right">
+            <a href="#" class="btn" data-toggle="modal" data-target="#signModal"><i class=" fa fa-star"></i> Register</a>
+            <a href="#" class="btn" data-toggle="modal" data-target="#loginModal"><i class=" fa fa-clock-o"></i>  Login</a>
+        </div>
         <div class="module module-social">
             <h6 class="text-sm mb-3">Follow Us!</h6>
             <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
@@ -307,6 +415,27 @@
 
 
 
+<script type="text/javascript">
+    function createLot(idx){
+        url = "./getprops.php?mtype=postcode&idx="+idx;
+        //alert(url);
+        //Send an XMLHttpRequest to the 'getnew.php' file
+
+        if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET",url,false);
+            xmlhttp.send(null);
+
+        }
+        else{
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp.open("GET",url,false);
+            xmlhttp.send();
+        }
+        alert(xmlhttp.responseText);
+        document.getElementById('lott').value = xmlhttp.responseText
+    }
+</script>
 
 <script type="text/javascript">
 		var textBox = document.getElementById('searchbox'),
