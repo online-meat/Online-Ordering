@@ -163,11 +163,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Email Address:</label>
-                                <input type="email" class="form-control" placeholder="Email Address" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                             </div>
                             <div class="form-group">
                                 <label>Password:</label>
-                                <input type="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name = "password" class="form-control" placeholder="Password" required>
                             </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary " value="Register"/>
