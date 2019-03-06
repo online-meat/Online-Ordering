@@ -167,6 +167,7 @@
                             <span class="notification">2</span>
                         </span>
                         <span class="cart-value">$32.98</span>
+                       <a href="getprops.php?mtype=logout">Logout</a>
                     </a>
                     <?php }else{ ?>
                     <a href="#" class="module module-cart right">
@@ -199,6 +200,7 @@
             <i class="ti ti-shopping-cart"></i>
             <span class="notification">2</span>
         </a>
+        <a href="getprops.php?mtype=logout">Logout</a>
         <?php }else{ ?>
         <div class="module module-cart right">
             <a href="#" class="btn fa fa-lock" data-toggle="modal" data-target="#loginModal"> Login</a>

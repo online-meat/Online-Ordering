@@ -14,4 +14,7 @@ if(!isset($_SESSION['username']) and isset($_COOKIE['username'], $_COOKIE['passw
 	}
 }
 */
+if(!isset($_SESSION['islog'])){
+    $_SESSION['islog'] = false;
+}
 ?>
