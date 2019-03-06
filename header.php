@@ -38,7 +38,7 @@
 		#searchbox {width: 300px;}
         #searchresult {width: 300px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
 		.row1 img {width:25px;height:25px;border-radius:50%;vertical-align:middle; margin-right: 5px;}
-		.row1 {font-weight: 500; color: purple; padding: 1px; background: lightyellow;}
+		.row1 {font-weight: 500; color: #000; padding: 1px; background: #fff;}
         .row1:hover {background-color:#eee}
 
         #searchbox1 {width: 280px;}
@@ -121,7 +121,7 @@
                         </span>
                         <span class="cart-value">$32.98</span>
                     </a>    -->
-                    <a href="#" class="module module-cart right" data-toggle="panel-cart">
+                    <a href="#" class="module module-cart right" data-toggle="modal" data-target="#loginModal">
                         <span class="cart-value">Register</span>
                         <span class="cart-value">Login</span>
                     </a>
@@ -152,7 +152,7 @@
         </a>
         -->
 
-        <a href="#" class="module module-cart right" data-toggle="panel-cart">
+        <a href="#" class="module module-cart right" data-toggle="modal" data-target="#loginModal">
             <span class="btn btn-primary">Login</span>
         </a>
 

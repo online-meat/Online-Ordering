@@ -45,8 +45,42 @@
         </footer>
         <!-- Footer / End -->
 
-    </div>
-    <!-- Content / End -->
+
+                <!-- Modal / Review -->
+        <div class="modal fade" id="loginModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-lg dark bg-dark">
+                        <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group">
+                                <label>Email Address:</label>
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="btn btn-primary" value="Login"/>
+                                <button class="btn btn-secondary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div align="center">
+                        <a href="#" class="">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
     <!-- Panel Cart -->
     <div id="panel-cart">
