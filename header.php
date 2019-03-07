@@ -25,7 +25,7 @@
                 $subject = 'Welcome to eMeat Australia - Email Activation';
                 $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
                 $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
-                $message .= "\n\neMeat - Australia\https://emeat.com.au";
+                $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
 
                 mail($email,$subject,$message,$headers);
 
