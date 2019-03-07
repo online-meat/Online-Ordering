@@ -15,17 +15,21 @@
         if ($postcode != -1){
             $req = mysqli_query($connection,"select * from customer where email='$email'");
             if(mysqli_num_rows($req) == 0){
-                mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt')");
-                //$headers = "MIME-Version: 1.0" . "\r\n";
-                //$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-                // More headers
-                //$headers .= 'From: <webmaster@example.com>' . "\r\n";
+                $hash = md5($email.$password.$phone);
+                $link = "https://emeat.com.au/getprops.php?mtype=activate&liame=$email&verify=$hash&code=$encrypt";
+                mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password, verification) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt','$hash')");
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                $headers .= 'From: <no-reply@emeat.com.au>' . "\r\n";
                 //$headers .= 'Cc: myboss@example.com' . "\r\n";
-                //$subject = 'Welcome to eMeat Australia - Email Activation';
-                //mail($to,$subject,$message,$headers);
-                mail($email,"eMeat Australia","Welcome to eMeat Australia");
-                echo "<script>alert('Your account has been created successfully. An activation email has been sent to your email. Please click on the activation link provided to activate your account.');</script>";
+                $subject = 'Welcome to eMeat Australia - Email Activation';
+                $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
+                $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
+                $message .= "\n\neMeat - Australia\https://emeat.com.au";
+
+                mail($email,$subject,$message,$headers);
+
+                echo "<script>alert('Your account has been created successfully. An activation email has been sent to your email ($email). Please click on the activation link provided to activate your account.');</script>";
             }else{
                 echo "<script>alert('The email used has already been registered. Please use another email address.');</script>";
             }
@@ -52,7 +56,7 @@
                 $_SESSION['confirmed'] = $dn['confirmed'];
                 $_SESSION['islog'] = true;
             }else{
-               echo "<script>alert('Account has not been activated. Please activate your account first.');</script>";
+               echo "<script>alert('Your account has not been activated. Please activate your account first.');</script>";
             }
         }else{
             echo "<script>alert('Cannot login: Wrong username/password.');</script>";
@@ -183,8 +187,8 @@
                     </a>
                     <?php }else{ ?>
                     <a href="#" class="module module-cart right">
-                        <span class="cart-value" data-toggle="modal" data-target="#signModal">Register</span>
-                        <span class="cart-value" data-toggle="modal" data-target="#loginModal">Login</span>
+                        <span class="cart-value" data-toggle="modal" data-target="#modalLRForm">Register</span>
+                        <span class="cart-value" data-toggle="modal" data-target="#modalLRForm">Login</span>
                     </a>
                     <?php } ?>
                 </div>
@@ -215,7 +219,7 @@
         <a href="getprops.php?mtype=logout">Logout</a>
         <?php }else{ ?>
         <div class="module module-cart right">
-            <a href="#" class="btn fa fa-lock" data-toggle="modal" data-target="#loginModal"> Login</a>
+            <a href="#" class="btn fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login</a>
         </div>
         <?php } ?>
 

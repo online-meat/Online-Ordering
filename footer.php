@@ -49,142 +49,206 @@
             function closeModal(idx){
                 $(idx).modal('hide');
             }
+            function showModal(idx){
+                $(idx).modal('show');
+            }
+            function destroyModal(idx){
+                $(idx).modal('dispose');
+            }
         </script>
 
-        <!-- Modal / Login -->
-        <div class="modal fade" id="forgetModal" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!-- Tab panels -->
+                <div class="tab-content">
+                  <!--Panel 7-->
+                  <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
                     <div class="modal-header modal-header-lg dark bg-dark">
                         <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
-                        <h4 class="modal-title fa fa-user-circle"> Retrieve your password</h4>
+                        <h2 class="modal-title fa fa-user-circle"> Login</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body mb-1">
+                      <form action="#" method="post">
+                        <div class="form-group">
+                            <label>Email Address:</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password:</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary" value="Login"/>
+                        </div>
+                        <input type="hidden" name='logform' value="TRUE" />
+                      </form>
+                    </div>
+                    <!--Footer-->
+                    <div class="modal-footer">
+                      <div class="options text-center text-md-right mt-1">
+                          <p>Not a member? <a data-toggle="tab" href="#panel8" class="blue-text"><b>Sign Up</b></a></p>
+                          <p>Forgot <a data-toggle="tab" href="#panel9" class="blue-text"><b>Password?</b></a></p>
+                      </div>
+                      <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                    </div>
+
+                  </div>
+                  <!--/.Panel 7-->
+
+                  <!--Panel 9-->
+                  <div class="tab-pane fade" id="panel9" role="tabpanel">
+                    <div class="modal-header modal-header-lg dark bg-dark">
+                        <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
+                        <h2 class="modal-title fa fa-key"> Retrieve your password</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
                     </div>
                     <div class="modal-body">
-                        <form action="#">
-                            <div class="form-group">
-                                <label>Email Address:</label>
-                                <input type="email" class="form-control" placeholder="Email Address" required>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-primary" value="Login"/>
-                                <button class="btn btn-secondary fa fa-lock"  data-toggle="modal" data-target="#signModal">Retrieve</button>
-                            </div>
-                        </form>
+                    <form action="#">
+                        <div class="form-group">
+                            <label>Email Address:</label>
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary" value="Retrieve"/>
+                        </div>
+                    </form>
                     </div>
-                    <div align="center">
-                        Don't have an account? <a href="#" class="btn" data-toggle="modal" data-target="#signModal">Register</a>
-                        Forget your password? <a href="#" class="btn" data-toggle="modal" data-target="#forgetModal">Get it</a>
+                    <div class="modal-footer">
+                        <div class="options text-right">
+                          <p class="pt-1"><a data-toggle="tab" href="#panel7" class="blue-text"><b>Log In</b></a></p>
+                      </div>
+                      <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="loginModal" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
+                  </div>
+
+
+                  <!--Panel 8-->
+                  <div class="tab-pane fade" id="panel8" role="tabpanel">
+
                     <div class="modal-header modal-header-lg dark bg-dark">
                         <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
-                        <h4 class="modal-title fa fa-user-circle"> Login</h4>
+                        <h2 class="modal-title fa fa-user-plus"> Sign Up</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
                     </div>
+                    <!--Body-->
                     <div class="modal-body">
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label>Email Address:</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Password:</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-primary" value="Login"/>
-                            </div>
-                            <input type="hidden" name='logform' value="TRUE" />
-                        </form>
+                      <form action="#" method="post">
+                                    <div class="form-group">
+                                        <label>First Name:</label>
+                                        <input type="text" name="fname" class="form-control" placeholder="First Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name:</label>
+                                        <input type="text" name="lname" class="form-control" placeholder="Last Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>House Address:</label>
+                                        <textarea rows="4" name="address" class="form-control" placeholder="House Address" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Area/Suburb:</label>
+                                        <select style="color:purple;font-weight:400;" name="postcode" class="form-control" onChange="createLot(this.value);">
+                                            <option value="-1">Select your Area or Suburb</option>
+                                          <?php
+                                              $qnx = mysqli_query($connection,"SELECT * FROM postcode ORDER BY city asc");
+                                              while($dns = mysqli_fetch_array($qnx)){  ?>
+                                                <option value="<?php echo $dns['postcode_id']; ?>"><?php echo $dns['city']; ?></option>
+                                        <?php } ?>
+                                       </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Post Code:</label>
+                                        <input style="color:purple;font-weight:400" id="lott" type="text" class="form-control" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>State:</label>
+                                        <select name="state" class="form-control" onchange="">
+                                            <option value="New South Wales">New South Wales</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number:</label>
+                                        <input type="number" name="phone" class="form-control" placeholder="Phone Number" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email Address:</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password:</label>
+                                        <input type="password" name = "password" class="form-control" placeholder="Password" required>
+                                    </div>
+                                    <div class="text-center">
+                                        <input type="submit" class="btn btn-primary " value="Register"/>
+                                    </div>
+                                    <input type="hidden" name='regform' value="TRUE" />
+                                </form>
+
                     </div>
-                    <div align="center">
-                        Don't have an account? <a href="#" class="btn" data-toggle="modal" data-target="#signModal">Register</a>
-                        Forget password? <a href="#" class="btn" data-toggle="modal" data-target="#forgetModal">Get it</a>
+                    <!--Footer-->
+                    <div class="modal-footer">
+                      <div class="options text-right">
+                          <p class="pt-1">Already have an account? <a data-toggle="tab" href="#panel7" class="blue-text"><b>Log In</b></a></p>
+                      </div>
+                      <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                     </div>
+                  </div>
+                  <!--/.Panel 8-->
                 </div>
             </div>
+            <!--/.Content-->
+          </div>
         </div>
+        <!--Modal: Login / Register Form-->
 
-        <?php
 
-        ?>
-        <div class="modal fade" id="signModal" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header modal-header-lg dark bg-dark">
-                        <div class="bg-image"><img src="assets/img/images/review.jpg" alt=""></div>
-                        <h4 class="modal-title fa fa-user-circle"> Sign Up</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label>First Name:</label>
-                                <input type="text" name="fname" class="form-control" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name:</label>
-                                <input type="text" name="lname" class="form-control" placeholder="Last Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>House Address:</label>
-                                <textarea rows="4" name="address" class="form-control" placeholder="House Address" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Area/Suburb:</label>
-                                <select style="color:purple;font-weight:400;" name="postcode" class="form-control" onChange="createLot(this.value);">
-                                    <option value="-1">Select your Area or Suburb</option>
-                                  <?php
-                                      $qnx = mysqli_query($connection,"SELECT * FROM postcode ORDER BY city asc");
-                                      while($dns = mysqli_fetch_array($qnx)){  ?>
-                                        <option value="<?php echo $dns['postcode_id']; ?>"><?php echo $dns['city']; ?></option>
-                                <?php } ?>
-					           </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Post Code:</label>
-                                <input style="color:purple;font-weight:400" id="lott" type="text" class="form-control" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>State:</label>
-                                <select name="state" class="form-control" onchange="">
-                                    <option value="New South Wales">New South Wales</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number:</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address:</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Password:</label>
-                                <input type="password" name = "password" class="form-control" placeholder="Password" required>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-primary " value="Register"/>
-                            </div>
-                            <input type="hidden" name='regform' value="TRUE" />
-                        </form>
-                    </div>
-                    <div align="center">
-                        Already Registered? <a href="#" class="btn" data-toggle="modal" data-target="#loginModal">Login</a>
-                    </div>
-                </div>
+    <!-- Modal: modalAbandonedCart-->
+    <div class="modal fade right" id="modalAddedCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="heading">Product added to the cart
+            </p>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="white-text">&times;</span>
+            </button>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-3">
+                <p></p>
+                <p class="text-center"><i class="fas fa-shopping-cart fa-4x"></i></p>
+              </div>
+
+              <div class="col-9">
+                <p>Product Added Cart?</p>
+                <p>Do you wish to checkout or continue shopping?</p>
+              </div>
             </div>
+          </div>
+
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+            <a type="button" class="btn btn-info">Checkout</a>
+            <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Continue Shopping</a>
+          </div>
         </div>
-
-
-
-
+        <!--/.Content-->
+      </div>
+    </div>
+    <!-- Modal: modalAbandonedCart-->
 
     <!-- Panel Cart -->
     <div id="panel-cart">
@@ -268,8 +332,8 @@
         <nav class="module module-navigation"></nav>
         <?php if(!$_SESSION['islog']){ ?>
         <div class="module module-cart right">
-            <a href="#" class="btn" data-toggle="modal" data-target="#signModal"><i class=" fa fa-star"></i> Register</a>
-            <a href="#" class="btn" data-toggle="modal" data-target="#loginModal"><i class=" fa fa-clock-o"></i>  Login</a>
+            <a href="#" class="btn" data-toggle="modal" data-target="#modalLRForm"><i class=" fa fa-star"></i> Register</a>
+            <a href="#" class="btn" data-toggle="modal" data-target="#modalLRForm"><i class=" fa fa-clock-o"></i>  Login</a>
         </div>
         <?php }else{ ?>
             <a href="getprops.php?mtype=logout"><i class=" fa fa-clock-o"></i>  Logout</a>
