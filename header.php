@@ -10,9 +10,11 @@
         $state = mysqli_real_escape_string($connection,$_POST['state']);
         $email = mysqli_real_escape_string($connection,$_POST['email']);
         $password = mysqli_real_escape_string($connection,$_POST['password']);
+        $password2 = mysqli_real_escape_string($connection,$_POST['password2']);
         $encrypt = sha1($password);
 
         if ($postcode != -1){
+        if($password == $password2){
             $req = mysqli_query($connection,"select * from customer where email='$email'");
             if(mysqli_num_rows($req) == 0){
                 $hash = md5($email.$password.$phone);
@@ -33,6 +35,8 @@
             }else{
                 echo "<script>alert('The email used has already been registered. Please use another email address.');</script>";
             }
+        }else{
+            echo "<script>alert('Your password dosen't match');</script>";
         }else{
             echo "<script>alert('Please select your suburb');</script>";
         }

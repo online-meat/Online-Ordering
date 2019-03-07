@@ -183,6 +183,10 @@
                                         <label>Password:</label>
                                         <input type="password" name = "password" class="form-control" placeholder="Password" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Confirm Password:</label>
+                                        <input type="password" name = "password2" class="form-control" placeholder="Repeat Password" required>
+                                    </div>
                                     <div class="text-center">
                                         <input type="submit" class="btn btn-primary " value="Register"/>
                                     </div>
