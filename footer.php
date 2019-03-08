@@ -108,7 +108,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
                     </div>
                     <div class="modal-body">
-                    <form action="#">
+                    <form action="#" method="post">
                         <div class="form-group">
                             <label>Email Address:</label>
                             <input type="email" name="email" class="form-control" placeholder="Email Address" required>

@@ -61,7 +61,9 @@
 
 
     <?php
+    require_once("./config/site_func.php");
     require_once ('./config/config.php');
+    $sfunc = new SiteFunction();
 
     if(isset($_POST['regform'])){
         $fname = mysqli_real_escape_string($connection,$_POST['fname']);
@@ -133,16 +135,18 @@
         $req = mysqli_query($connection,"select * from customer where email='$email'");
         if(mysqli_num_rows($req)>0){
             $hash = mysqli_fetch_query($req)['password'];
-            $encrypt = md5(date('D, d-m-Y h:i:s', time()));
-            $link = "https://emeat.com.au/getprops.php?mtype=togrof&liame=$email&verify=$hash&code=$encrypt";
+            $fname = mysqli_fetch_query($req)['fname'];
+            $encrypt = mysqli_fetch_query($req)['verification'];
+            $ecode = md5(date('D, d-m-Y h:i:s', time()));
+            $link = "https://emeat.com.au/getprops.php?mtype=togrof&liame=$email&verify=$hash&ecode=$encrypt&dcode=$ecode";
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: eMeat Australia <no-reply@emeat.com.au>' . "\r\n";
-            $subject = 'Welcome to eMeat Australia - Email Activation';
-            $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
+            $subject = 'Welcome to eMeat Australia - Password Reset';
+            $message = "Hi $fname,\n\nSomeone requested that the password to your account be reset. If it wasn't you, just ignore this email. Otherwise, here are the details to reset your password. Click the button below to reset your password.\n";
             $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
-            $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
+            $message .= "\n\nThanks,\n\neMeat - Australia \nhttps://emeat.com.au";
 
             mail($email,$subject,$message,$headers);
         }else{

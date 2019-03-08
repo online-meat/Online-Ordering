@@ -207,9 +207,6 @@ class SiteFunction{
 
 	public function sendSingleMail($to,$subject,$msg,$headers){
 
-		if(!isset($headers)){
-			$headers = "From: Erudite Millennium Ltd. (Erudite Millennium) <info@eruditemillennium.com>";
-		}
 
 		$msge = wordwrap($msg,100);
 

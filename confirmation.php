@@ -24,6 +24,16 @@
         $title1 = "Activation Failed!";
         $title2 = "Your email address cannot be confirmed.  Please try to register again.";
         echo "<script>$(document).ready(function(e){alertify.error('Account cannot be activated.');});</script>";
+    }elseif($title1=='4'){
+        $title1 = "Password Changed Successfully!";
+        $title2 = "Your password has been successfully changed. A temporary password has been sent to your email address. Use this temporary password to login and change it to your choice.";
+        echo "<script>$(document).ready(function(e){alertify.success('Account password changed successfully.');});</script>";
+        echo "<script type='text/javascript'> $(document).ready(function(e){notifyUser('Discover our extensive variation of meat and chicken, with a range of quality options to suit all needs, occasions and budgets. Login to your account','success'); });
+				</script>";
+    }elseif($title1=='3'){
+        $title1 = "Password Change Failed!";
+        $title2 = "Your email address cannot be confirmed.  Please try to register again.";
+        echo "<script>$(document).ready(function(e){alertify.error('Password cannot be changed.');});</script>";
     }
 ?>
 
