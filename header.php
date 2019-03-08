@@ -1,72 +1,3 @@
-<?php
-    require_once ('./config/config.php');
-
-    if(isset($_POST['regform'])){
-        $fname = mysqli_real_escape_string($connection,$_POST['fname']);
-        $lname = mysqli_real_escape_string($connection,$_POST['lname']);
-        $address = mysqli_real_escape_string($connection,$_POST['address']);
-        $phone = mysqli_real_escape_string($connection,$_POST['phone']);
-        $postcode = mysqli_real_escape_string($connection,$_POST['postcode']);
-        $state = mysqli_real_escape_string($connection,$_POST['state']);
-        $email = mysqli_real_escape_string($connection,$_POST['email']);
-        $password = mysqli_real_escape_string($connection,$_POST['password']);
-        $password2 = mysqli_real_escape_string($connection,$_POST['password2']);
-        $encrypt = sha1($password);
-
-        if ($postcode != -1){
-        if($password == $password2){
-            $req = mysqli_query($connection,"select * from customer where email='$email'");
-            if(mysqli_num_rows($req) == 0){
-                $hash = md5($email.$password.$phone);
-                $link = "https://emeat.com.au/getprops.php?mtype=activate&liame=$email&verify=$hash&code=$encrypt";
-                mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password, verification) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt','$hash')");
-                $headers = "MIME-Version: 1.0" . "\r\n";
-                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: <no-reply@emeat.com.au>' . "\r\n";
-                //$headers .= 'Cc: myboss@example.com' . "\r\n";
-                $subject = 'Welcome to eMeat Australia - Email Activation';
-                $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
-                $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
-                $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
-
-                mail($email,$subject,$message,$headers);
-
-                echo "<script>alert('Your account has been created successfully. An activation email has been sent to your email ($email). Please click on the activation link provided to activate your account.');</script>";
-            }else{
-                echo "<script>alert('The email used has already been registered. Please use another email address.');</script>";
-            }
-        }else{
-            echo "<script>alert('Your password dosen't match');</script>";
-        }else{
-            echo "<script>alert('Please select your suburb');</script>";
-        }
-    }elseif(isset($_POST['logform'])){
-        $email = mysqli_real_escape_string($connection,$_POST['email']);
-        $password = mysqli_real_escape_string($connection,$_POST['password']);
-        $encrypt = sha1($password);
-
-        $req = mysqli_query($connection,"select * from customer where email='$email'");
-		$dn = mysqli_fetch_array($req);
-		if(($dn['password']==$encrypt) and mysqli_num_rows($req)>0){
-            if($dn['confirmed']==1){
-                $_SESSION['email'] = $email;
-                $_SESSION['uid'] = $dn['customer_id'];
-                $_SESSION['fname'] = $dn['firstname'];
-                $_SESSION['lname'] = $dn['lastname'];
-                $_SESSION['address'] = $dn['address'];
-                $_SESSION['phone'] = $dn['phone'];
-                $_SESSION['state'] = $dn['state'];
-                $_SESSION['postcode'] = $dn['postcode'];
-                $_SESSION['confirmed'] = $dn['confirmed'];
-                $_SESSION['islog'] = true;
-            }else{
-               echo "<script>alert('Your account has not been activated. Please activate your account first.');</script>";
-            }
-        }else{
-            echo "<script>alert('Cannot login: Wrong username/password.');</script>";
-        }
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,8 +28,23 @@
 <link rel="stylesheet" href="assets/css/prettify.css" />
 <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
 
+<!-- Alertify -->
+<link rel="stylesheet" href="assets/plugins/alertify/css/alertify.core.css" />
+<link rel="stylesheet" href="assets/plugins/alertify/css/alertify.default.css" />
+<!-- JS Alertify -->
+<script src="assets/plugins/alertify/js/alertify.min.js"></script>
+
+<!-- PNotify -->
+<link href="assets/plugins/pnotify/dist/pnotify.css" rel="stylesheet">
+<link href="assets/plugins/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+<link href="assets/plugins/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+
+
 <!-- CSS Theme -->
 <link id="theme" rel="stylesheet" href="assets/css/themes/theme-beige.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 
     <style type="text/css">
 		#searchbox {width: 300px;}
@@ -112,6 +58,99 @@
 	</style>
 
 </head>
+
+
+    <?php
+    require_once ('./config/config.php');
+
+    if(isset($_POST['regform'])){
+        $fname = mysqli_real_escape_string($connection,$_POST['fname']);
+        $lname = mysqli_real_escape_string($connection,$_POST['lname']);
+        $address = mysqli_real_escape_string($connection,$_POST['address']);
+        $phone = mysqli_real_escape_string($connection,$_POST['phone']);
+        $postcode = mysqli_real_escape_string($connection,$_POST['postcode']);
+        $state = mysqli_real_escape_string($connection,$_POST['state']);
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $password = mysqli_real_escape_string($connection,$_POST['password']);
+        $password2 = mysqli_real_escape_string($connection,$_POST['password2']);
+        $encrypt = sha1($password);
+
+        if ($postcode != -1){
+            if($password == $password2){
+                $req = mysqli_query($connection,"select * from customer where email='$email'");
+                if(mysqli_num_rows($req) == 0){
+                    $hash = md5($email.$password.$phone);
+                    $link = "https://emeat.com.au/getprops.php?mtype=activate&liame=$email&verify=$hash&code=$encrypt";
+                    mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password, verification) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt','$hash')");
+                    $headers = "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                    $headers .= 'From: eMeat Australia <no-reply@emeat.com.au>' . "\r\n";
+                    //$headers .= 'Cc: myboss@example.com' . "\r\n";
+                    $subject = 'Welcome to eMeat Australia - Email Activation';
+                    $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
+                    $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
+                    $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
+
+                    mail($email,$subject,$message,$headers);
+
+                    echo "<script>$(document).ready(function(e){alertify.alert('Your account has been created successfully. An activation email has been sent to your email ($email). Please click on the activation button provided to activate your account.');alertify.success('Account created.');});</script>";
+                }else{
+                    echo "<script>$(document).ready(function(e){alertify.alert('The email address used has already been registered. Please use another email address.');alertify.error('Email address has been used.');});</script>";
+                }
+            }else{
+                echo "<script>$(document).ready(function(e){alertify.alert('Your password does not match.');alertify.error('Password not match');});</script>";
+            }
+        }else{
+            echo "<script>$(document).ready(function(e){alertify.alert('Error Occured. Please select your suburb');alertify.error('Suburb not selected.');});</script>";
+        }
+    }elseif(isset($_POST['logform'])){
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $password = mysqli_real_escape_string($connection,$_POST['password']);
+        $encrypt = sha1($password);
+
+        $req = mysqli_query($connection,"select * from customer where email='$email'");
+		$dn = mysqli_fetch_array($req);
+		if(mysqli_num_rows($req)>0 and ($dn['password']==$encrypt)){
+            if($dn['confirmed']==1){
+                $_SESSION['email'] = $email;
+                $_SESSION['uid'] = $dn['customer_id'];
+                $_SESSION['fname'] = $dn['firstname'];
+                $_SESSION['lname'] = $dn['lastname'];
+                $_SESSION['address'] = $dn['address'];
+                $_SESSION['phone'] = $dn['phone'];
+                $_SESSION['state'] = $dn['state'];
+                $_SESSION['postcode'] = $dn['postcode'];
+                $_SESSION['confirmed'] = $dn['confirmed'];
+                $_SESSION['islog'] = true;
+            }else{
+                echo "<script>$(document).ready(function(e){alertify.alert('Your account has not been activated. Please activate your account first.');alertify.error('Account not activated.');});</script>";
+            }
+        }else{
+            echo "<script>$(document).ready(function(e){alertify.alert('Cannot login! You have entered wrong username or password.');alertify.error('wrong username or password.');});</script>";
+        }
+    }elseif(isset($_POST['forgotform'])){
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $req = mysqli_query($connection,"select * from customer where email='$email'");
+        if(mysqli_num_rows($req)>0){
+            $hash = mysqli_fetch_query($req)['password'];
+            $encrypt = md5(date('D, d-m-Y h:i:s', time()));
+            $link = "https://emeat.com.au/getprops.php?mtype=togrof&liame=$email&verify=$hash&code=$encrypt";
+
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= 'From: eMeat Australia <no-reply@emeat.com.au>' . "\r\n";
+            $subject = 'Welcome to eMeat Australia - Email Activation';
+            $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
+            $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
+            $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
+
+            mail($email,$subject,$message,$headers);
+        }else{
+            echo "<script>$(document).ready(function(e){alertify.alert('Error Occured. Email address you entered cannot be found!');alertify.error('wrong email entered');});</script>";
+        }
+    }
+?>
+
 
 <body>
 
@@ -223,9 +262,11 @@
         <a href="getprops.php?mtype=logout">Logout</a>
         <?php }else{ ?>
         <div class="module module-cart right">
-            <a href="#" class="btn fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login</a>
+            <a href="#panel7" class="btn fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login</a>
         </div>
         <?php } ?>
 
     </header>
     <!-- Header / End -->
+
+

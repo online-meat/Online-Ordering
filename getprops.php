@@ -24,8 +24,7 @@ if(isset($mtype)){
 
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            $headers .= 'From: <info@emeat.com.au>' . "\r\n";
-            //$headers .= 'Cc: myboss@example.com' . "\r\n";
+            $headers .= 'From: eMeat Australia <info@emeat.com.au>' . "\r\n";
             $subject = 'Welcome to eMeat Australia - Account Activated';
             $message = "Hi $fname,\n\nYour account with eMeat Australia has successfully been activated. \n\n";
             $message .= "<p>Now that you have signed up, we can't wait to start trading with you.<br><br><b>The right products.</b><br>Discover our extensive variation of meat and chicken, with a range of quality options to suit all needs, occasions and budgets.<br><br><b>Order meat on the way.</b><br>Our simple platform lets you order meat online at comfort of your home or office with expert ease.<br><br><b>Halal product guaranteed.</b>We assured you of pure and healthy halal meat and chicken from our trusted and certified supplier.<br><br><b>Pay on delivery.</b><br>Payment will only be made when your product is delivered.</p><p>Start ordering your meat by clicking the button below.</p>";

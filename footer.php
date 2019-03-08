@@ -111,11 +111,12 @@
                     <form action="#">
                         <div class="form-group">
                             <label>Email Address:</label>
-                            <input type="email" class="form-control" placeholder="Email Address" required>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                         </div>
                         <div class="text-center">
                             <input type="submit" class="btn btn-primary" value="Retrieve"/>
                         </div>
+                        <input type="hidden" name='forgotform' value="TRUE" />
                     </form>
                     </div>
                     <div class="modal-footer">
@@ -677,7 +678,9 @@
 
 
 <!-- JS Plugins -->
+<!-- JQuery
 <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+-->
 <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
 <script src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="assets/plugins/slick-carousel/slick/slick.min.js"></script>
@@ -690,12 +693,65 @@
 <script src="assets/plugins/skrollr/dist/skrollr.min.js"></script>
 <script src="assets/plugins/animsition/dist/js/animsition.min.js"></script>
 
+<!-- PNotify -->
+<script src="assets/plugins/pnotify/dist/pnotify.js"></script>
+<script src="assets/plugins/pnotify/dist/pnotify.buttons.js"></script>
+<script src="assets/plugins/pnotify/dist/pnotify.nonblock.js"></script>
+
 <!-- JS Core -->
 <script src="assets/js/core.js"></script>
 <script src="assets/js/prettify.js"></script>
 
+
 <!-- JS Stylewsitcher -->
 <script src="styleswitcher/styleswitcher.js"></script>
+
+
+<script type="text/javascript">
+    function notifyUser(message,type){
+        if(type=="success"){
+            new PNotify({
+                title: 'Success',
+              type: 'success',
+              text: message,
+              nonblock: {
+                  nonblock: true
+              },
+              styling: 'bootstrap3'
+            });
+        }else if(type=="failure"){
+            new PNotify({
+                title: 'Error Occured',
+              type: 'error',
+              text: message,
+              nonblock: {
+                  nonblock: true
+              },
+              styling: 'bootstrap3'
+            });
+        }else if(type=="wait"){
+            new PNotify({
+              title: 'Information',
+              text: message,
+              type: 'info',
+              hide: false,
+              styling: 'bootstrap3',
+              addclass: 'dark'
+            });
+        }else{
+            new PNotify({
+                title: 'Information',
+              type: 'info',
+              text: message,
+              nonblock: {
+                  nonblock: true
+              },
+              styling: 'bootstrap3',
+              addclass: 'dark'
+            });
+        }
+    }
+</script>
 
 </body>
 

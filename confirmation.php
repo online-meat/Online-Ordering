@@ -17,9 +17,13 @@
     if($title1=='1'){
         $title1 = "Account Activated!";
         $title2 = "Your email address has been successfully confirmed. You can start ordering your meat by sign in to your account.";
+        echo "<script>$(document).ready(function(e){alertify.success('Account activated successfully.');});</script>";
+        echo "<script type='text/javascript'> $(document).ready(function(e){notifyUser('Discover our extensive variation of meat and chicken, with a range of quality options to suit all needs, occasions and budgets. Login to your account','success'); });
+				</script>";
     }elseif($title1=='2'){
         $title1 = "Activation Failed!";
         $title2 = "Your email address cannot be confirmed.  Please try to register again.";
+        echo "<script>$(document).ready(function(e){alertify.error('Account cannot be activated.');});</script>";
     }
 ?>
 
