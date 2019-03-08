@@ -234,8 +234,7 @@
                     </a>
                     <?php }else{ ?>
                     <a href="#" class="module module-cart right">
-                        <span class="cart-value" data-toggle="modal" data-target="#modalLRForm">Register</span>
-                        <span class="cart-value" data-toggle="modal" data-target="#modalLRForm">Login</span>
+                        <span class="cart-value" data-toggle="modal" data-target="#modalLRForm">Login/Register</span>
                     </a>
                     <?php } ?>
                 </div>

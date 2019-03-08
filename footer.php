@@ -337,8 +337,7 @@
         <nav class="module module-navigation"></nav>
         <?php if(!$_SESSION['islog']){ ?>
         <div class="module module-cart right">
-            <a href="#" class="btn" data-toggle="modal" data-target="#modalLRForm"><i class=" fa fa-star"></i> Register</a>
-            <a href="#" class="btn" data-toggle="modal" data-target="#modalLRForm"><i class=" fa fa-clock-o"></i>  Login</a>
+            <a href="#" class="btn" data-toggle="modal" data-target="#modalLRForm"><i class=" fa fa-lock"></i> Login/Register</a>
         </div>
         <?php }else{ ?>
             <a href="getprops.php?mtype=logout"><i class=" fa fa-clock-o"></i>  Logout</a>
