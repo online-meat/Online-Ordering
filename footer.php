@@ -259,7 +259,7 @@
     <div id="panel-cart">
         <div class="panel-cart-container">
             <div class="panel-cart-title">
-                <h5 class="title">Your Cart</h5>
+                <h5 class="title ti ti-shopping-cart"> Your Cart</h5>
                 <button class="close" data-toggle="panel-cart"><i class="ti ti-close"></i></button>
             </div>
             <div class="panel-cart-content">

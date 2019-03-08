@@ -122,8 +122,9 @@
                 $_SESSION['address'] = $dn['address'];
                 $_SESSION['phone'] = $dn['phone'];
                 $_SESSION['state'] = $dn['state'];
-                $_SESSION['postcode'] = $dn['postcode'];
+                $_SESSION['postcode'] = $dn['postcode_id'];
                 $_SESSION['confirmed'] = $dn['confirmed'];
+                $_SESSION['cart'] = 0;
                 $_SESSION['islog'] = true;
             }else{
                 echo "<script>$(document).ready(function(e){alertify.alert('Your account has not been activated. Please activate your account first.');alertify.error('Account not activated.');});</script>";
@@ -171,7 +172,7 @@
         $subject = 'New information on Contact Us Page received!';
         $message = "Hi Team,<br><br>Someone has sent you a contact message as follows:<br>";
         $message .= "<br>Name: $name<br>Email: $email<br>Phone: $phone<br>Message: $msg<br><br>eMeat - Australia <br>https://emeat.com.au";
-        mail($email,$subject,$message,$headers);
+        mail('info@emeat.com.au',$subject,$message,$headers);
 
         echo "<script>$(document).ready(function(e){alertify.alert('Thank you!\\nYour message has been sent successfully. One of our team member will contact you shortly.');alertify.success('Message sent.');});</script>";
     }
@@ -234,10 +235,10 @@
                             <li><a href="#" class="fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login/Register</a></li>
                             <?php }else{ ?>
                             <li class="has-dropdown">
-                                <a href="#"> Account</a>
+                                <a href="#"> Account (<span style="color:red"><b><?php echo $_SESSION['cart']; ?></b></span>)</a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
-                                        <li><a href="#" class="fa fa-shopping-cart"> Cart (<span style="color:green"><b>2</b></span>)</a></li>
+                                        <li><a href="#" class="fa fa-shopping-cart" data-target="#panel-cart" data-toggle="panel-cart"> Cart (<span style="color:red"><b><?php echo $_SESSION['cart']; ?></b></span>)</a></li>
                                         <li><a href="#" class="fa fa-truck"> Orders</a></li>
                                         <li><a href="#" class="fa fa-user-circle"> Profile</a></li>
                                         <li><a href="#" class="fa fa-sign-out" onclick="logoutAlert();"> Logout</a></li>
