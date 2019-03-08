@@ -115,7 +115,11 @@
                     <div class="col-lg-8 push-lg-2">
                         <h2 class="mb-3">Would you like to give a review?</h2>
                         <h5 class="text-muted">Do not hesitate to do that!</h5>
+                        <?php if($_SESSION['islog']){ ?>
                         <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#reviewModal"><span>Write a review</span></button>
+                        <?php }else{ ?>
+                        <button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modalLRForm"><span>Login/Register</span></button>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
@@ -132,21 +136,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
             </div>
             <div class="modal-body">
-                <form action="#">
+                <form action="#" method="post">
                     <div class="form-group">
-                        <textarea cols="30" rows="6" class="form-control" placeholder="Write here your review..."></textarea>
+                        <textarea cols="30" rows="6" name="msg" class="form-control" placeholder="Write here your review..." required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Your name:</label>
-                        <input type="text" class="form-control" placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label>Location:</label>
-                        <input type="text" class="form-control" placeholder="Your Location">
+                        <input type="text" class="form-control" value="<?php echo isset($_SESSION['fname'])?$_SESSION['fname']:''; ?>" disabled>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary">Add review</button>
+                        <input type="submit" class="btn btn-primary" value="Add Review" />
                     </div>
+                    <input type="hidden" name='revform' value="TRUE" />
                 </form>
             </div>
         </div>

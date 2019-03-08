@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-lg-5 push-lg-2 col-md-6">
                         <div id="google-map" class="h-500 shadow">
-                            <form>
+                            <form method="post" action="#">
                                 <div style="text-align:center;color: black">
                                     <h4>Please fill out this form</h4>
                                 </div>
@@ -67,6 +67,7 @@
                                     <input type="reset" value="Reset" class="btn btn-info"> &nbsp;&nbsp;
                                     <input type="submit" value="Submit" class="btn  btn-success">
                                 </div>
+                                    <input type="hidden" name='conform' value="TRUE" />
                             </form>
                         </div>
                     </div>

@@ -335,13 +335,7 @@
         </div>
 
         <nav class="module module-navigation"></nav>
-        <?php if(!$_SESSION['islog']){ ?>
-        <div class="module module-cart right">
-            <a href="#" class="btn" data-toggle="modal" data-target="#modalLRForm"><i class=" fa fa-lock"></i> Login/Register</a>
-        </div>
-        <?php }else{ ?>
-            <a href="getprops.php?mtype=logout"><i class=" fa fa-clock-o"></i>  Logout</a>
-        <?php } ?>
+
         <div class="module module-social">
             <h6 class="text-sm mb-3">Follow Us!</h6>
             <a href="#" class="icon icon-social icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
@@ -485,7 +479,34 @@
     </div>
 </div>
 
+<script type="text/javascript">
+function resetAlert () {
+    $("#toggleCSS").attr("href", "assets/plugins/alertify/css/alertify.default.css");
+    alertify.set({
+        labels : {
+            ok     : "OK",
+            cancel : "Cancel"
+        },
+        delay : 5000,
+        buttonReverse : false,
+        buttonFocus   : "ok"
+    });
+}
+function logoutAlert() {
+    alertify.set({ labels: { ok: "Logout", cancel: "Cancel" } });
+    alertify.confirm("Do you wish to logout?", function (e) {
+        if (e) {
+            alertify.log("You've logged out");
+            window.location.href = "./getprops.php?mtype=logout";
+        } else {
+            alertify.log("You're still logon");
+        }
+    });
+    resetAlert();
+    return false;
+}
 
+</script>
 
 <script type="text/javascript">
     function createLot(idx){

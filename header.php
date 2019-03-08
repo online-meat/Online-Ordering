@@ -30,7 +30,7 @@
 
 <!-- Alertify -->
 <link rel="stylesheet" href="assets/plugins/alertify/css/alertify.core.css" />
-<link rel="stylesheet" href="assets/plugins/alertify/css/alertify.default.css" />
+<link rel="stylesheet" href="assets/plugins/alertify/css/alertify.default.css" id="toggleCSS" />
 <!-- JS Alertify -->
 <script src="assets/plugins/alertify/js/alertify.min.js"></script>
 
@@ -47,14 +47,14 @@
 
 
     <style type="text/css">
-		#searchbox {width: 300px;}
-        #searchresult {width: 300px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
+		#searchbox {width: 320px;}
+        #searchresult {width: 320px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
 		.row1 img {width:25px;height:25px;border-radius:50%;vertical-align:middle; margin-right: 5px;}
 		.row1 {font-weight: 500; color: #000; padding: 1px; background: #fff;}
         .row1:hover {background-color:#eee}
 
-        #searchbox1 {width: 280px;}
-        #searchresult1 {width: 280px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
+        #searchbox1 {width: 300px;}
+        #searchresult1 {width: 300px; z-index: 10;position: absolute; overflow-y: auto; height: 250px; }
 	</style>
 
 </head>
@@ -84,6 +84,7 @@
                     $hash = md5($email.$password.$phone);
                     $link = "https://emeat.com.au/getprops.php?mtype=activate&liame=$email&verify=$hash&code=$encrypt";
                     mysqli_query($connection,"insert into customer (firstname, lastname, address, postcode_id, state, phone, email, password, verification) values ('$fname','$lname','$address',$postcode,'$state','$phone','$email','$encrypt','$hash')");
+
                     $headers = "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                     $headers .= 'From: eMeat Australia <no-reply@emeat.com.au>' . "\r\n";
@@ -152,6 +153,27 @@
         }else{
             echo "<script>$(document).ready(function(e){alertify.alert('Error Occured. Email address you entered cannot be found!');alertify.error('wrong email entered');});</script>";
         }
+    }elseif(isset($_POST['revform'])){
+        $msg = mysqli_real_escape_string($connection,$_POST['msg']);
+        mysqli_query($connection,"insert into feedback (customer_id, message) values (".$_SESSION['uid'].",'$msg')");
+
+        echo "<script>$(document).ready(function(e){alertify.alert('Thank you!\\nYour review has been sent successfully.');alertify.success('Review Submitted.');});</script>";
+    }elseif(isset($_POST['conform'])){
+        $msg = mysqli_real_escape_string($connection,$_POST['comment']);
+        $phone = mysqli_real_escape_string($connection,$_POST['phone']);
+        $email = mysqli_real_escape_string($connection,$_POST['email']);
+        $name = mysqli_real_escape_string($connection,$_POST['name']);
+        mysqli_query($connection,"insert into message (name,email,phone,comment) values ('$name','$email','$phone','$msg')");
+
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: eMeat Australia <info@emeat.com.au>' . "\r\n";
+        $subject = 'New information on Contact Us Page received!';
+        $message = "Hi Team,<br><br>Someone has sent you a contact message as follows:<br>";
+        $message .= "<br>Name: $name<br>Email: $email<br>Phone: $phone<br>Message: $msg<br><br>eMeat - Australia <br>https://emeat.com.au";
+        mail($email,$subject,$message,$headers);
+
+        echo "<script>$(document).ready(function(e){alertify.alert('Thank you!\\nYour message has been sent successfully. One of our team member will contact you shortly.');alertify.success('Message sent.');});</script>";
     }
 ?>
 
@@ -174,7 +196,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <!-- Navigation -->
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
@@ -208,35 +230,31 @@
                                 </div>
                             </li>
                             <li><a href="page-contact.php">Contact</a></li>
+                            <?php if(!$_SESSION['islog']){ ?>
+                            <li><a href="#" class="fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login/Register</a></li>
+                            <?php }else{ ?>
+                            <li class="has-dropdown">
+                                <a href="#"> Account</a>
+                                <div class="dropdown-container">
+                                    <ul class="dropdown-mega">
+                                        <li><a href="#" class="fa fa-shopping-cart"> Cart (<span style="color:green"><b>2</b></span>)</a></li>
+                                        <li><a href="#" class="fa fa-truck"> Orders</a></li>
+                                        <li><a href="#" class="fa fa-user-circle"> Profile</a></li>
+                                        <li><a href="#" class="fa fa-sign-out" onclick="logoutAlert();"> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <?php } ?>
                         </ul>
                     </nav>
-                    <div class="module left">
-                        <a href="menu-grid-navigation.php" class="btn btn-outline-secondary"><span>Order Now</span></a>
-                    </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="module">
                         <div class="">
                             <input name="search" id="searchbox" type="search" class="form-control" placeholder="Search Products...">
                         </div>
                         <div id="searchresult"></div>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <?php if($_SESSION['islog']){ ?>
-                   <a href="#" class="module module-cart right" data-toggle="panel-cart">
-                        <span class="cart-icon">
-                            <i class="ti ti-shopping-cart"></i>
-                            <span class="notification">2</span>
-                        </span>
-                        <span class="cart-value">$32.98</span>
-                       <a href="getprops.php?mtype=logout">Logout</a>
-                    </a>
-                    <?php }else{ ?>
-                    <a href="#" class="module module-cart right">
-                        <span class="cart-value" data-toggle="modal" data-target="#modalLRForm">Login/Register</span>
-                    </a>
-                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -252,22 +270,12 @@
         </div>
 
         <div class="module module-logo">
-            <div class="">
+            <div style="margin-left:10px;">
                 <input name="search" id="searchbox1" type="search" class="form-control" placeholder="Search Products...">
             </div>
             <div id="searchresult1" align="left"></div>
         </div>
-        <?php if($_SESSION['islog']){ ?>
-        <a href="#" class="module module-cart" data-toggle="panel-cart">
-            <i class="ti ti-shopping-cart"></i>
-            <span class="notification">2</span>
-        </a>
-        <a href="getprops.php?mtype=logout">Logout</a>
-        <?php }else{ ?>
-        <div class="module module-cart right">
-            <a href="#panel7" class="btn fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login</a>
-        </div>
-        <?php } ?>
+
 
     </header>
     <!-- Header / End -->
