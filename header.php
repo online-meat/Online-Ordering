@@ -89,9 +89,9 @@
                     $headers .= 'From: eMeat Australia <no-reply@emeat.com.au>' . "\r\n";
                     //$headers .= 'Cc: myboss@example.com' . "\r\n";
                     $subject = 'Welcome to eMeat Australia - Email Activation';
-                    $message = "Hi $fname,\n\nYou are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.\n";
+                    $message = "Hi $fname,<br><br>You are one step away from joining eMeat Australia. Please click the button below to activate your account in order to start ordering your favourites.<br>";
                     $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
-                    $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
+                    $message .= "<br><br>eMeat - Australia<br>https://emeat.com.au";
 
                     mail($email,$subject,$message,$headers);
 
@@ -135,7 +135,7 @@
         $req = mysqli_query($connection,"select * from customer where email='$email'");
         if(mysqli_num_rows($req)>0){
             $hash = mysqli_fetch_query($req)['password'];
-            $fname = mysqli_fetch_query($req)['fname'];
+            $fname = mysqli_fetch_query($req)['firstname'];
             $encrypt = mysqli_fetch_query($req)['verification'];
             $ecode = md5(date('D, d-m-Y h:i:s', time()));
             $link = "https://emeat.com.au/getprops.php?mtype=togrof&liame=$email&verify=$hash&ecode=$encrypt&dcode=$ecode";
@@ -144,9 +144,9 @@
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: eMeat Australia <no-reply@emeat.com.au>' . "\r\n";
             $subject = 'Welcome to eMeat Australia - Password Reset';
-            $message = "Hi $fname,\n\nSomeone requested that the password to your account be reset. If it wasn't you, just ignore this email. Otherwise, here are the details to reset your password. Click the button below to reset your password.\n";
-            $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Activate</a>";
-            $message .= "\n\nThanks,\n\neMeat - Australia \nhttps://emeat.com.au";
+            $message = "Hi $fname,<br><br>Someone requested that the password to your account be reset. If it wasn't you, just ignore this email. Otherwise, here are the details to reset your password. Click the button below to reset your password.<br>";
+            $message .= "<a href='$link' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;'>Reset</a><br>This link is valid for 1 hour.";
+            $message .= "<br><br>Thanks,<br><br>eMeat - Australia <br>https://emeat.com.au";
 
             mail($email,$subject,$message,$headers);
         }else{

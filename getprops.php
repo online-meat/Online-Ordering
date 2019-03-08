@@ -18,7 +18,7 @@ if(isset($mtype)){
         if($xmt == 0){
             header('Location: ./confirmation.php?act=failed&title1=2$thr='.$acode);
         }else{
-            $fname = mysqli_fetch_array($qmx)['fname'];
+            $fname = mysqli_fetch_array($qmx)['firstname'];
 
             mysqli_query($connection,"update customer set confirmed=1 where email='$email' and verification='$active'");
 
@@ -26,10 +26,10 @@ if(isset($mtype)){
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: eMeat Australia <info@emeat.com.au>' . "\r\n";
             $subject = 'Welcome to eMeat Australia - Account Activated';
-            $message = "Hi $fname,\n\nYour account with eMeat Australia has successfully been activated. \n\n";
-            $message .= "<p>Now that you have signed up, we can't wait to start trading with you.<br><br><b>The right products.</b><br>Discover our extensive variation of meat and chicken, with a range of quality options to suit all needs, occasions and budgets.<br><br><b>Order meat on the way.</b><br>Our simple platform lets you order meat online at comfort of your home or office with expert ease.<br><br><b>Halal product guaranteed.</b>We assured you of pure and healthy halal meat and chicken from our trusted and certified supplier.<br><br><b>Pay on delivery.</b><br>Payment will only be made when your product is delivered.</p><p>Start ordering your meat by clicking the button below.</p>";
+            $message = "Hi $fname,<br><br>Your account with eMeat Australia has successfully been activated. <br><br>";
+            $message .= "<p>Now that you have signed up, we can't wait to start trading with you.<br><br><b>The right products.</b><br>Discover our extensive variation of meat and chicken, with a range of quality options to suit all needs, occasions and budgets.<br><br><b>Order meat on the way.</b><br>Our simple platform lets you order meat online at comfort of your home or office with expert ease.<br><br><b>Halal product guaranteed.</b><br>We assured you of pure and healthy halal meat and chicken from our trusted and certified supplier.<br><br><b>Pay on delivery.</b><br>Payment will only be made when your product is delivered.</p><p>Start ordering your meat by clicking the button below.</p>";
             $message .= "<a href='https://emeat.com.au' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 14px;'>Visit eMeat</a>";
-            $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
+            $message .= "<br><br>eMeat - Australia<br>https://emeat.com.au";
             mail($email,$subject,$message,$headers);
 
             header('Location: ./confirmation.php?act=verified&title1=1$thr='.$acode);
@@ -49,7 +49,7 @@ if(isset($mtype)){
         if($xmt == 0){
             header('Location: ./confirmation.php?act=failed&title1=3$thr='.$dcode);
         }else{
-            $fname = mysqli_fetch_array($qmx)['fname'];
+            $fname = mysqli_fetch_array($qmx)['firstname'];
             $temp_pass = $sfunc->get_rand_id(8);
             $pass = sha1($temp_pass);
 
@@ -59,10 +59,10 @@ if(isset($mtype)){
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: eMeat Australia <info@emeat.com.au>' . "\r\n";
             $subject = 'eMeat Australia - Password changed';
-            $message = "Hi $fname,\n\nYour password account with eMeat Australia has successfully been changed. \n\n";
+            $message = "Hi $fname,<br><br>Your password account with eMeat Australia has successfully been changed. <br><br>";
             $message .= "<p>You can used the temporary password given below to login.<br><br><b>Temporary Password:&nbsp; $temp_pass</b><br><br>It is advised to change your password immidiately after you have signed on.</p>";
             $message .= "Click this button to login &nbsp; <a href='https://emeat.com.au' style=' background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 14px;'>Visit eMeat</a>";
-            $message .= "\n\neMeat - Australia\nhttps://emeat.com.au";
+            $message .= "<br><br>eMeat - Australia<br>https://emeat.com.au";
             mail($email,$subject,$message,$headers);
 
             header('Location: ./confirmation.php?act=verified&title1=4$thr='.$dcode);
