@@ -36,6 +36,7 @@
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
                         <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
                     </div>
+                    <a href="./privacy.php">Privacy Policy</a>
                 </div>
             </div>
 
@@ -288,6 +289,8 @@
             <a href="#" class="icon icon-social icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
             <a href="#" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
         </div>
+
+        <a href="./privacy.php">Privacy Policy</a>
     </nav>
 
     <!-- Body Overlay -->
