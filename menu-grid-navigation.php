@@ -51,7 +51,7 @@
                                             <span class="text-muted text-sm">Beef, Lamb, Goat </span>
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">Price</span> $<?php echo $dn['price']; ?>/kg</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><?php if($_SESSION['islog']){ ?><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button>
+                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><?php if($_SESSION['islog']){ ?><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal" onclick="popJSProd(<?php echo $dn['product_id'].",'".$dn['product_name']."','".$dn['price']."'"; ?>,1)"><span>Add to cart</span></button>
                                                 <?php }else{ ?>
                                                 <button class="btn btn-outline-secondary btn-sm" data-target="#modalLRForm" data-toggle="modal"><span>Add to cart</span></button>
                                                 <?php } ?>
@@ -82,7 +82,11 @@
                                             <span class="text-muted text-sm">Chicken, Duck, Turkey </span>
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-sm-6"><span class="text-md mr-4"><span class="text-muted">Price</span> $<?php echo $dn['price']; ?>/kg</span></div>
-                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal"><span>Add to cart</span></button></div>
+                                                <div class="col-sm-6 text-sm-right mt-2 mt-sm-0"><?php if($_SESSION['islog']){ ?><button class="btn btn-outline-secondary btn-sm" data-target="#productModal" data-toggle="modal" onclick="popJSProd(<?php echo $dn['product_id'].",'".$dn['product_name']."','".$dn['price']."'"; ?>,2)"><span>Add to cart</span></button>
+                                                <?php }else{ ?>
+                                                <button class="btn btn-outline-secondary btn-sm" data-target="#modalLRForm" data-toggle="modal"><span>Add to cart</span></button>
+                                                <?php } ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

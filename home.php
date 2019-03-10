@@ -167,7 +167,7 @@
                         <img src="assets/img/photos/butcher1.jpg" alt="" class="special-offer-image">
                         <div class="special-offer-content">
                             <h2 class="mb-2">Beef Tenderloin</h2>
-                            <h5 class="text-muted mb-5">Get discount of 10% from orders higher that $40!</h5>
+                            <h5 class="text-muted mb-5">Get discount of 5% from orders higher that $100!</h5>
                             <ul class="list-check text-lg mb-0">
                                 <li>Order any day of the week and get it the second day</li>
                                 <li class="false">5% off for order higher that $100</li>

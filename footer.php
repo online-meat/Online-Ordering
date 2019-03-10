@@ -220,12 +220,8 @@
         <div class="modal-content">
           <!--Header-->
           <div class="modal-header">
-            <p class="heading">Product added to the cart
-            </p>
-
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true" class="white-text">&times;</span>
-            </button>
+            Product added to the cart
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
           </div>
 
           <!--Body-->
@@ -234,11 +230,11 @@
             <div class="row">
               <div class="col-3">
                 <p></p>
-                <p class="text-center"><i class="fas fa-shopping-cart fa-4x"></i></p>
+                <p class="text-center"><i class="ti ti-shopping-cart-full"></i></p>
               </div>
 
               <div class="col-9">
-                <p>Product Added Cart?</p>
+                <p>Item Added Cart?</p>
                 <p>Do you wish to checkout or continue shopping?</p>
               </div>
             </div>
@@ -246,8 +242,8 @@
 
           <!--Footer-->
           <div class="modal-footer justify-content-center">
-            <a type="button" class="btn btn-info">Checkout</a>
-            <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Continue Shopping</a>
+            <a href="./checkout.php" type="button" class="btn btn-info"  onclick="">Checkout</a>
+            <a href='./menu-grid-navigation.php' class="btn btn-outline-info waves-effect" data-dismiss="modal">Continue Shopping</a>
           </div>
         </div>
         <!--/.Content-->
@@ -257,72 +253,20 @@
 
     <!-- Panel Cart -->
     <div id="panel-cart">
-        <div class="panel-cart-container">
+        <div class="panel-cart-container" style="height:90%">
             <div class="panel-cart-title">
-                <h5 class="title ti ti-shopping-cart"> Your Cart</h5>
+                <h5 class="title ti ti-shopping-cart"> Your Cart  &nbsp; <span id='carttot' class='pull-right'></span></h5>
                 <button class="close" data-toggle="panel-cart"><i class="ti ti-close"></i></button>
             </div>
             <div class="panel-cart-content">
-                <table class="table-cart">
-                    <tr>
-                        <td class="title">
-                            <span class="name"><a href="#productModal" data-toggle="modal">Pizza Chicked BBQ</a></span>
-                            <span class="caption text-muted">26”, deep-pan, thin-crust</span>
-                        </td>
-                        <td class="price">$9.82</td>
-                        <td class="actions">
-                            <a href="#productModal" data-toggle="modal" class="action-icon"><i class="ti ti-pencil"></i></a>
-                            <a href="#" class="action-icon"><i class="ti ti-close"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="title">
-                            <span class="name"><a href="#productModal" data-toggle="modal">Beef Burger</a></span>
-                            <span class="caption text-muted">Large (500g)</span>
-                        </td>
-                        <td class="price">$9.82</td>
-                        <td class="actions">
-                            <a href="#productModal" data-toggle="modal" class="action-icon"><i class="ti ti-pencil"></i></a>
-                            <a href="#" class="action-icon"><i class="ti ti-close"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="title">
-                            <span class="name"><a href="#productModal" data-toggle="modal">Extra Burger</a></span>
-                            <span class="caption text-muted">Small (200g)</span>
-                        </td>
-                        <td class="price text-success">$0.00</td>
-                        <td class="actions">
-                            <a href="#productModal" data-toggle="modal" class="action-icon"><i class="ti ti-pencil"></i></a>
-                            <a href="#" class="action-icon"><i class="ti ti-close"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="title">
-                            <span class="name">Weekend 20% OFF</span>
-                        </td>
-                        <td class="price text-success">-$8.22</td>
-                        <td class="actions"></td>
-                    </tr>
-                </table>
-                <div class="cart-summary">
-                    <div class="row">
-                        <div class="col-7 text-right text-muted">Order total:</div>
-                        <div class="col-5"><strong>$21.02</strong></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7 text-right text-muted">Devliery:</div>
-                        <div class="col-5"><strong>$3.99</strong></div>
-                    </div>
-                    <hr class="hr-sm">
-                    <div class="row text-lg">
-                        <div class="col-7 text-right text-muted">Total:</div>
-                        <div class="col-5"><strong>$24.21</strong></div>
-                    </div>
-                </div>
+                <div id="tablePrints"> </div>
             </div>
         </div>
-        <a href="checkout.php" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
+        <?php if($_SESSION['cart'] > 0){ ?>
+        <a href="./checkout.php" class="panel-cart-action btn btn-secondary btn-block btn-lg"><span>Go to checkout</span></a>
+        <?php }else{ ?>
+        <a href="#" class="panel-cart-action btn btn-secondary btn-block btn-lg" aria-disabled="true"><span>Empty Cart</span></a>
+        <?php } ?>
     </div>
 
     <!-- Panel Mobile -->
@@ -357,124 +301,82 @@
         <div class="modal-content">
             <div class="modal-header modal-header-lg dark bg-dark">
                 <div class="bg-image"><img src="assets/img/photos/modal-add.jpg" alt=""></div>
-                <h4 class="modal-title">Specify your dish</h4>
+                <h4 class="modal-title">Specify the item</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
             </div>
-            <div class="modal-product-details">
-                <div class="row align-items-center">
-                    <div class="col-9">
-                        <h6 class="mb-0">Boscaiola Pasta</h6>
-                        <span class="text-muted">Pasta, Cheese, Tomatoes, Olives</span>
-                    </div>
-                    <div class="col-3 text-lg text-right">$9.00</div>
-                </div>
-            </div>
+            <div id="jsproduct"></div>
             <div class="modal-body panel-details-container">
+                <!-- Panel Details / KG -->
+                <div class="panel-details">
+                    <h5 class="panel-details-title">
+                        <a href="#panelDetailsAdditions" data-toggle="collapse"><i class="ti ti-package" ></i> How many kilogram? <i class="pull-right ti-arrow-circle-down" ></i> </a>
+                    </h5>
+                    <div id="panelDetailsAdditions" class="collapse show">
+                        <div class="panel-details-content">
+                            <div class="row">
+                                kg <div class="col-sm-3">
+                                   <input id="kgid" name="kgx" type="number" min="1.0" step="0.5" value="1.0" class="control-input"  onkeyup="checkInp(this.value);" onchange="checkInp(this.value);" required>
+                                </div> &nbsp;
+                                <div class="col-sm-9">
+                                    Example: 10, 11.5, 12.0, 12.5, ...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Panel Details / Size -->
                 <div class="panel-details">
                     <h5 class="panel-details-title">
-                        <label class="custom-control custom-radio">
-                            <input name="radio_title_size" type="radio" class="custom-control-input">
-                            <span class="custom-control-indicator"></span>
-                        </label>
-                        <a href="#panelDetailsSize" data-toggle="collapse">Size</a>
+                        <a href="#panelDetailsSize" data-toggle="collapse"><i class="ti ti-split-v" ></i> Select cutting option <i class="pull-right ti-arrow-circle-down" ></i> </a>
                     </h5>
-                    <div id="panelDetailsSize" class="collapse show">
+                    <div id="panelDetailsSize" class="collapse">
                         <div class="panel-details-content">
                             <div class="form-group">
                                 <label class="custom-control custom-radio">
-                                    <input name="radio_size" type="radio" class="custom-control-input" checked>
+                                    <input name="radio_size" type="radio" class="custom-control-input" value="0" checked>
                                     <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Small - 100g ($9.99)</span>
+                                    <span class="custom-control-description">Do not cut into pieces</span>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label class="custom-control custom-radio">
-                                    <input name="radio_size" type="radio" class="custom-control-input">
+                                    <input name="radio_size" type="radio" class="custom-control-input" value="1">
                                     <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Medium - 200g ($14.99)</span>
+                                    <span class="custom-control-description">Cut into small sizes</span>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label class="custom-control custom-radio">
-                                    <input name="radio_size" type="radio" class="custom-control-input">
+                                    <input name="radio_size" type="radio" class="custom-control-input" value="2">
                                     <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Large - 350g ($21.99)</span>
+                                    <span class="custom-control-description">Cut into medium sizes</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-control custom-radio">
+                                    <input name="radio_size" type="radio" class="custom-control-input" value="3">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Cut into large sizes</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-control custom-radio">
+                                    <input name="radio_size" type="radio" class="custom-control-input" value="4">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Cut into any sizes</span>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Panel Details / Additions -->
+                <!-- Panel Details / Total -->
                 <div class="panel-details">
                     <h5 class="panel-details-title">
-                        <label class="custom-control custom-radio">
-                            <input name="radio_title_additions" type="radio" class="custom-control-input">
-                            <span class="custom-control-indicator"></span>
-                        </label>
-                        <a href="#panelDetailsAdditions" data-toggle="collapse">Additions</a>
+                        <i class="ti ti-shopping-cart-full" ></i> Amount: &nbsp;<div class="pull-right" id="totalitem"></div>
                     </h5>
-                    <div id="panelDetailsAdditions" class="collapse">
-                        <div class="panel-details-content">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Tomato ($1.29)</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Ham ($1.29)</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Chicken ($1.29)</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Cheese($1.29)</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Bacon ($1.29)</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Panel Details / Other -->
-                <div class="panel-details">
-                    <h5 class="panel-details-title">
-                        <label class="custom-control custom-radio">
-                            <input name="radio_title_other" type="radio" class="custom-control-input">
-                            <span class="custom-control-indicator"></span>
-                        </label>
-                        <a href="#panelDetailsOther" data-toggle="collapse">Other</a>
-                    </h5>
-                    <div id="panelDetailsOther" class="collapse">
-                        <textarea cols="30" rows="4" class="form-control" placeholder="Put this any other informations..."></textarea>
-                    </div>
                 </div>
             </div>
-            <button type="button" class="modal-btn btn btn-secondary btn-block btn-lg" data-dismiss="modal"><span>Add to Cart</span></button>
+            <button type="button" class="modal-btn btn btn-secondary btn-block btn-lg" onclick="addToCart();" data-target="#modalAddedCart" data-toggle="modal" data-dismiss="modal"><span>Add to Cart</span></button>
         </div>
     </div>
 </div>
@@ -504,6 +406,10 @@ function logoutAlert() {
     });
     resetAlert();
     return false;
+}
+function viewCartAlert() {
+    alertify.log("Item Added to Cart");
+    $("#panel-cart").modal();
 }
 
 </script>
@@ -694,6 +600,213 @@ function logoutAlert() {
 
 
 	</script>
+
+<script type="text/javascript">
+var price_kg = 0;
+function popJSProd(idx,name,price,ty){
+    price_kg = price;
+    var cat = ty==1?"Beef, Lamb, Goat":"Chicken, Duck, Turkey";
+    var htmlDiv = "<div class='modal-product-details'><div class='row align-items-center'><div class='col-3 text-lg text-right'><img src='assets/img/photos/product/product"+idx+".jpg' /></div><div class='col-6'><h6 class='mb-0'>"+name+"</h6><span class='text-muted'>"+cat+"</span></div><div class='col-3 text-lg text-right'>$"+price+"/kg</div></div></div><input type='hidden' id='idxt' name='idx' value='"+idx+"'/><input type='hidden' id='prxt' name='idoprice' value='"+price+"'/>";
+    document.getElementById('totalitem').innerHTML = "$ "+price;
+    document.getElementById('jsproduct').innerHTML = htmlDiv;
+    document.getElementById('kgid').value = 1;
+}
+
+function checkInp(value){
+  if (isNaN(value)){
+    alertify.error('Please enter numbers only');
+    return false;
+  }else if(value<1){
+    alertify.error('Minimum order is 1 kg');
+  }else{
+      if((value % 0.5) == 0){
+          var pop = value * parseFloat(price_kg);
+          var hDiv = "$ "+pop.toFixed(2);
+          document.getElementById('totalitem').innerHTML = hDiv;
+      }else{
+          alertify.error('KG should only be multiple of 0.5');
+          document.getElementById('kgid').value = 1;
+          var pop = parseFloat(price_kg);
+          var hDiv = "$ "+pop.toFixed(2);
+          document.getElementById('totalitem').innerHTML = hDiv;
+      }
+  }
+}
+
+function addToCart(){
+    var idx = document.getElementById('idxt').value;
+    //var prx = document.getElementById('prxt').value;
+    var kgx = document.getElementById('kgid').value;
+    var rdx = "";
+    var radios = document.getElementsByName('radio_size');
+    for (var i = 0, len = radios.length; i < len; i++) {
+        if (radios[i].checked) {
+            rdx = radios[i].value;
+            break;
+        }
+    }
+    //alert(idx+','+kgx+','+rdx);
+    url = "./getprops.php?mtype=addcart&idx="+idx+"&kgx="+kgx+"&prx="+rdx;
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET",url,false);
+        xmlhttp.send(null);
+
+    }
+    else{
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.open("GET",url,false);
+        xmlhttp.send();
+    }
+    var myTable= "No Item in Cart";
+    var response = xmlhttp.responseText;
+    var all_total = 0;
+    var jlen = 0;
+    if(response != 0){
+        try{
+            myTable = "<table class='table-cart'>";
+
+            var JSONObject = JSON.parse(response);
+            var total=0.0;
+            var discount = 0.0;
+            var shipping = 0.0;
+            jlen = JSONObject.length;
+            for (var key in JSONObject) {
+                if (JSONObject.hasOwnProperty(key)) {
+
+                    var name = JSONObject[key]["name"];
+                    var descr = JSONObject[key]["description"];
+                    var price = JSONObject[key]["price"];
+                    var amount = JSONObject[key]["amount"];
+                    var ides = JSONObject[key]["id"];
+
+	                myTable+="<tr><td class='title'><span class='name'>"+name+"</span><span class='caption text-muted'>"+descr+"</span> &nbsp;&nbsp;$"+price+"/kg</td><td class='price'>$"+to2dec(amount)+"</td><td class='actions'><a href='#' class='action-icon' title='Remove this item from your cart' onclick='removeCart("+ides+");'><i class='ti ti-close'></i></a></td></tr>";
+	                total += parseFloat(amount);
+                }
+            }
+            if(total>=100){
+	           discount = total * 0.05;
+	           myTable+="<tr><td class='title'><span class='name'>Discount 5% OFF</span></td><td class='price text-success'>-$"+to2dec(discount)+"</td><td class='actions'></td></tr>";
+            }
+            if(total<30){
+	           shipping = 10.0;
+	           myTable+="<tr><td class='title' colspan='2'><span class='name'>Delivery (< $30)</span></td><td class='price text-danger'>$10.00</td></tr>";
+            }else{
+	           myTable+="<tr><td class='title' colspan='2'><span class='name'>Delivery (> $30) OFF</span></td><td class='price text-success'>$0.00</td></tr>";
+            }
+
+            myTable+="</table>";
+
+            all_total = total + shipping - discount;
+            myTable+="<div class='cart-summary'><div class='row'><div class='col-7 text-right text-muted'>Order total:</div><div class='col-5'><strong>$"+to2dec(total)+"</strong></div></div><div class='row'><div class='col-7 text-right text-muted'>Devliery:</div><div class='col-5'><strong>$"+to2dec(shipping)+"</strong></div></div><hr class='hr-sm'><div class='row text-lg'><div class='col-7 text-right text-muted'>Total:</div><div class='col-5'><strong>$"+to2dec(all_total)+"</strong></div></div></div>";
+        }catch(e){
+            alert(e);
+        }
+
+    }
+    document.getElementById('tablePrints').innerHTML = myTable;
+    document.getElementById('tablePrintx').innerHTML = myTable;
+    document.getElementById('cartnum1').innerHTML = jlen;
+    document.getElementById('cartnum2').innerHTML = jlen;
+    document.getElementById('carttot').innerHTML = "$"+to2dec(all_total);
+
+}
+function viewCart(){
+    url = "./getprops.php?mtype=viewcart";
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET",url,false);
+        xmlhttp.send(null);
+
+    }
+    else{
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.open("GET",url,false);
+        xmlhttp.send();
+    }
+    var myTable= "No Item in Cart";
+    var response = xmlhttp.responseText;
+    //alert(response);
+    var all_total = 0;
+    var jlen = 0;
+    if(response != 0){
+        try{
+            myTable = "<table class='table-cart'>";
+
+            var JSONObject = JSON.parse(response);
+            var total=0.0;
+            var discount = 0.0;
+            var shipping = 0.0;
+            jlen = JSONObject.length;
+            for (var key in JSONObject) {
+                if (JSONObject.hasOwnProperty(key)) {
+
+                    var name = JSONObject[key]["name"];
+                    var descr = JSONObject[key]["description"];
+                    var price = JSONObject[key]["price"];
+                    var amount = JSONObject[key]["amount"];
+                    var ides = JSONObject[key]["id"];
+
+	                myTable+="<tr><td class='title'><span class='name'>"+name+"</span><span class='caption text-muted'>"+descr+"</span> &nbsp;&nbsp;$"+price+"/kg</td><td class='price'>$"+to2dec(amount)+"</td><td class='actions'><a href='#' class='action-icon' title='Remove this item from your cart' onclick='removeCart("+ides+");'><i class='ti ti-close'></i></a></td></tr>";
+	                total += parseFloat(amount);
+                }
+            }
+            if(total>=100){
+	           discount = total * 0.05;
+	           myTable+="<tr><td class='title'><span class='name'>Discount 5% OFF</span></td><td class='price text-success'>-$"+to2dec(discount)+"</td><td class='actions'></td></tr>";
+            }
+            if(total<30){
+	           shipping = 10.0;
+	           myTable+="<tr><td class='title' colspan='2'><span class='name'>Delivery (< $30)</span></td><td class='price text-danger'>$10.00</td></tr>";
+            }else{
+	           myTable+="<tr><td class='title' colspan='2'><span class='name'>Delivery (> $30) OFF</span></td><td class='price text-success'>$0.00</td></tr>";
+            }
+
+            myTable+="</table>";
+
+            var all_total = total + shipping - discount;
+            myTable+="<div class='cart-summary'><div class='row'><div class='col-7 text-right text-muted'>Order total:</div><div class='col-5'><strong>$"+to2dec(total)+"</strong></div></div><div class='row'><div class='col-7 text-right text-muted'>Devliery:</div><div class='col-5'><strong>$"+to2dec(shipping)+"</strong></div></div><hr class='hr-sm'><div class='row text-lg'><div class='col-7 text-right text-muted'>Total:</div><div class='col-5'><strong>$"+to2dec(all_total)+"</strong></div></div></div>";
+        }catch(e){
+            alert(e);
+        }
+
+    }
+    document.getElementById('tablePrints').innerHTML = myTable;
+    document.getElementById('tablePrintx').innerHTML = myTable;
+    document.getElementById('cartnum1').innerHTML = jlen;
+    document.getElementById('cartnum2').innerHTML = jlen;
+    document.getElementById('carttot').innerHTML = "$"+to2dec(all_total);
+
+}
+function removeCart(idx){
+    url = "./getprops.php?mtype=removecart&idx="+idx;
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET",url,false);
+        xmlhttp.send(null);
+
+    }
+    else{
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.open("GET",url,false);
+        xmlhttp.send();
+    }
+    viewCart();
+    alertify.log('Item removed successfully');
+}
+
+function to2dec(numb){
+	return parseFloat(Math.round(numb * 100) / 100).toFixed(2);
+}
+
+    function showCart(){
+        //location.reload();
+        $(document).ready(function(){
+            viewCart();
+            $("#panel-cart").modal();
+        });
+    }
+</script>
 
 
 

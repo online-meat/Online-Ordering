@@ -122,10 +122,15 @@
                 $_SESSION['address'] = $dn['address'];
                 $_SESSION['phone'] = $dn['phone'];
                 $_SESSION['state'] = $dn['state'];
-                $_SESSION['postcode'] = $dn['postcode_id'];
+                $mdx = mysqli_fetch_array(mysqli_query($connection,"select * from postcode where postcode_id=".$dn['postcode_id']));
+                $_SESSION['postcode'] = $mdx['postcode'];
+                $_SESSION['city'] = $mdx['city'];
                 $_SESSION['confirmed'] = $dn['confirmed'];
                 $_SESSION['cart'] = 0;
                 $_SESSION['islog'] = true;
+                if(isset($_SESSION['carts'])){
+                    unset($_SESSION['carts']);
+                }
             }else{
                 echo "<script>$(document).ready(function(e){alertify.alert('Your account has not been activated. Please activate your account first.');alertify.error('Account not activated.');});</script>";
             }
@@ -197,7 +202,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <!-- Navigation -->
                     <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
@@ -235,11 +240,10 @@
                             <li><a href="#" class="fa fa-lock" data-toggle="modal" data-target="#modalLRForm"> Login/Register</a></li>
                             <?php }else{ ?>
                             <li class="has-dropdown">
-                                <a href="#"> Account (<span style="color:red"><b><?php echo $_SESSION['cart']; ?></b></span>)</a>
+                                <a href="#" style="color:red"> Account </a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
-                                        <li><a href="#" class="fa fa-shopping-cart" data-target="#panel-cart" data-toggle="panel-cart"> Cart (<span style="color:red"><b><?php echo $_SESSION['cart']; ?></b></span>)</a></li>
-                                        <li><a href="#" class="fa fa-truck"> Orders</a></li>
+                                        <li><a href="#" class="fa fa-truck"> All Orders</a></li>
                                         <li><a href="#" class="fa fa-user-circle"> Profile</a></li>
                                         <li><a href="#" class="fa fa-sign-out" onclick="logoutAlert();"> Logout</a></li>
                                     </ul>
@@ -256,6 +260,16 @@
                         </div>
                         <div id="searchresult"></div>
                     </div>
+                </div>
+                <div class="col-md-1">
+                    <?php if($_SESSION['islog']){ ?>
+                    <a href="#" class="module module-cart right" data-toggle="panel-cart"  onclick="viewCart();">
+                        <span class="cart-icon">
+                            <i class="ti ti-shopping-cart"></i>
+                            <span class="notification" id='cartnum1'><?php echo $_SESSION['cart']; ?></span>
+                        </span>
+                    </a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -276,8 +290,12 @@
             </div>
             <div id="searchresult1" align="left"></div>
         </div>
-
-
+        <?php if($_SESSION['islog']){ ?>
+        <a href="#" class="module module-cart" data-toggle="panel-cart"  onclick="viewCart();">
+            <i class="ti ti-shopping-cart"></i>
+            <span class="notification" id='cartnum2'><?php echo $_SESSION['cart']; ?></span>
+        </a>
+        <?php } ?>
     </header>
     <!-- Header / End -->
 
